@@ -1,0 +1,29 @@
+{
+  "name": "capstone",
+  "version": "1.0.0",
+  "description": "SOAL capstone project",
+  "main": "index.js",
+  "scripts": {
+    "start": "",
+    "dev": "concurrently --kill-others \"cd client && npm start\" \"nodemon server/bin/www\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amalu-sajeev-me/bug-free-robot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amalu-sajeev-me/bug-free-robot/issues"
+  },
+  "homepage": "https://github.com/amalu-sajeev-me/bug-free-robot#readme",
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
