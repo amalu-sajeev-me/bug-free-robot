@@ -4,8 +4,10 @@
   "description": "SOAL capstone project",
   "main": "index.js",
   "scripts": {
-    "start": "",
-    "dev": "concurrently --kill-others \"cd client && npm start\" \"nodemon server/bin/www\"",
+    "start": "node -r dotenv/config server/bin/www",
+    "client": "cd client && npm start",
+    "server": "nodemon -r dotenv/config server/bin/www",
+    "dev": "concurrently --kill-others \"npm run client\" \"npm run server\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,11 +22,19 @@
   },
   "homepage": "https://github.com/amalu-sajeev-me/bug-free-robot#readme",
   "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/express-session": "^1.17.4",
     "concurrently": "^7.0.0",
     "nodemon": "^2.0.15"
   },
   "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "dotenv": "^12.0.4",
     "express": "^4.17.2",
+    "express-session": "^1.17.2",
     "mongodb": "^4.3.0",
     "mongoose": "^6.1.6"
   }
