@@ -1,3 +1,3 @@
 const cors = require("cors");
 
-exports = cors();
+exports.cors = cors();
