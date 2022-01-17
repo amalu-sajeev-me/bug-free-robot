@@ -1,6 +1,8 @@
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Components/Home/Home';
+import Signup from './Components/Login/Signup';
+import Signin from './Components/Login/Signin';
 import List from './Components/Home/List';
 import Footer from './Components/Footer/Footer';
 
@@ -9,7 +11,9 @@ function App() {
     <>
     <List />
     <Switch>
-      <Route path='/' component={Home}/>
+      <Route path='/' exact component={Home}/>
+      <Route path='/signup' component={Signup} />
+      <Route path='/signin' component={Signin} />
       {/* <Route path='/About' component={About}/>
       <Route path='/Feature' component={Feature}/>
       <Route path='/Contact' component={Contact Us}/> */}
