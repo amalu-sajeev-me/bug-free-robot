@@ -24,50 +24,50 @@ function Signin({ setOpenModal }) {
   };
   return (
     <>
-      <div className="modalBackground">
-        <div className="modalContainer">
-          <div className="titleCloseBtn"></div>
-          <div className="app-wrapper">
+      <div className="A-modalBackground">
+        <div className="A-modalContainer">
+          <div className="A-titleCloseBtn"></div>
+          <div className="A-app-wrapper">
             <div>
-              <h2 className="title">Create your Account</h2>
+              <h2 className="A-title">Create your Account</h2>
             </div>
-            <form className="form-wrapper">
-              <div className="fullname">
-                <label className="label">Full Name</label>
+            <form className="A-form-wrapper">
+              <div className="A-fullname">
+                <label className="A-label">Full Name</label>
                 <input
-                  className="input"
+                  className="A-input"
                   type="text"
                   name="fullname"
                   value={values.fullname}
                   onChange={handleChange}
                 />
-                {errors.fullname && <p className="error">{errors.fullname}</p>}
+                {errors.fullname && <p className="A-error">{errors.fullname}</p>}
               </div>
-              <div className="signinemail">
-                <label className="label">Email</label>
+              <div className="A-signinemail">
+                <label className="A-label">Email</label>
                 <input
-                  className="input"
+                  className="A-input"
                   type="email"
                   name="email"
                   value={values.email}
                   onChange={handleChange}
                 />
-                {errors.email && <p className="error">{errors.email}</p>}
+                {errors.email && <p className="A-error">{errors.email}</p>}
               </div>
-              <div className="signinpassword">
-                <label className="label">Password</label>
+              <div className="A-signinpassword">
+                <label className="A-label">Password</label>
                 <input
-                  className="input"
+                  className="A-input"
                   type="password"
                   name="password"
                   value={values.password}
                   onChange={handleChange}
                 />
-                {errors.password && <p className="error">{errors.password}</p>}
+                {errors.password && <p className="A-error">{errors.password}</p>}
               </div>
-              <div className="footer">
-                <button onClick={handleClick} className="submit">Continue</button>
-                <button className="submit">
+              <div className="A-footer">
+                <button onClick={handleClick} className="A-submit">Continue</button>
+                <button className="A-submit">
                     Not a Member?
               </button>
               </div>

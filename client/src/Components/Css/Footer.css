@@ -8,7 +8,6 @@ footer{
  .line{
     width: 30%;
  }
-
  hr{
      margin-bottom: .5em;
  }
@@ -21,13 +20,11 @@ footer{
     color: white;
     margin-bottom: .5em;
 }
-
 @media screen and (max-width: 1024px){
     .line{
         width: 40%;
      }
 }
-
 @media screen and (max-width: 568px){
     hr{
         display: none;

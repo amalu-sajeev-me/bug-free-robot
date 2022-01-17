@@ -18,6 +18,14 @@ function validation(values) {
     }else if(!/\s+@\s+\.\s+/.test(values.email)){
         errors.email="Email is invalid."
     }
+    
+    if(!values.dob){
+        errors.dob="DOB is required"
+    }else if(values.dob.length < 10){
+        errors.dob="DOB must be valid."
+    }else if(values.dob.length > 10){
+        errors.dob="Please enter valid Dob."
+    }
     if(!values.phone){
         errors.phone="Phone no. is required"
     }else if(values.phone.length < 13){
@@ -37,7 +45,7 @@ function validation(values) {
         errors.password="Password is not matching."
     }
     return errors;
-    
+
 }
 
 export default validation

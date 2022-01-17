@@ -10,20 +10,22 @@ import Contactsection from './Components/Contactus/Contactsection';
 
 function App() {
   return (
+    
     <>
-    <About/>
-      <Contactsection/>
+      {/* <About/>
+      <Contactsection/> */}
+    
     <List />
     <Switch>
       <Route path='/' exact component={Home}/>
       <Route path='/signup' component={Signup} />
       <Route path='/signin' component={Signin} />
-      {/* <Route path='/About' component={About}/>
-      <Route path='/Feature' component={Feature}/>
-      <Route path='/Contact' component={Contact Us}/> */}
+      <Route path='/About' component={About}/>
+      {/* <Route path='/Feature' component={Feature}/> */}
+      <Route path='/Contact' component={Contactsection}/>
     </Switch>
       <Footer/>
-    </>
-  );
+</>
+  )
 }
 export default App;

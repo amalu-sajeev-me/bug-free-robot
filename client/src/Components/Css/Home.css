@@ -1,28 +1,28 @@
-.mainSection{
+.A-mainSection{
     display: flex;
+    background-color: transparent;
     /* background-color: transparent; */
     justify-content: space-around;
     align-items: center;
     margin-top: 10%;
     padding: 50px;
 }
-.contentBox{
+.A-contentBox{
     border-radius: 10px;
     width: 40%;
     background-color: rgb(185, 179, 179);
     padding: .5em 1.5em;
 }
-.contentBox h1{
+.A-contentBox h1{
     font-size: 1.5rem;
     color: #301934;
 }
-
-.contentBox p{
+.A-contentBox p{
     font-size: 1rem;
     margin: 1em 0;
     font-family: 'Poppins', sans-serif;
 }
-.Signin {
+.A-Signin {
     border: 2px solid rgb(97, 93, 93);
     border-radius: .5em;
     display: inline-block;
@@ -34,12 +34,12 @@
     background-clip: content-box,border-box; */
     text-decoration: none;
 }
-.btn{
+.A-btn{
     margin-bottom: 1rem;
     text-align: center;
 }
-.Signup {
-    border: 2px solid rgb(97, 93, 93);
+.A-Signup {
+    border: 2px solid black;
     border-radius: .5em;
     padding: .5em 1.5em;
     display: inline-block;
@@ -50,13 +50,12 @@
     background-clip: content-box,border-box; */
     text-decoration: none;
 }
-
-.Signin:hover{
+.A-Signin:hover{
     background-color: rgb(240, 27, 116);
     overflow: hidden;
     color: white;
 }
-.Signup:hover{
+.A-Signup:hover{
     background-color: rgb(240, 27, 116);
     overflow: hidden;
     color: white;
@@ -72,28 +71,28 @@
     html{
         font-size: 14px;
     }
-    .mainSection{
+    .A-mainSection{
         flex-direction: column;
         margin-top: 1em;
     }
-    .contentBox {
+    .A-contentBox {
         width: 90%;
         margin: 0 auto;
         margin-bottom: 5rem;
     }
-    .contentBox h1{
+    .A-contentBox h1{
         font-size: 1rem;
     }
-    .contentBox p{
+    .A-contentBox p{
         font-size: .9rem;
     }
 
-    .btnBox{
+    .A-btnBox{
         width: 80%;
     }
 }
 @media screen and (max-width:400px){
-    .btnBox{
+    .A-btnBox{
         width: 60%;
     }
 }

@@ -30,135 +30,135 @@ function Signup({ setOpenModal }) {
   };
   return (
     <>
-      <div className="modalBackground">
-        <div className="modalContainer">
-          <div className="titleCloseBtn"></div>
-          <div className="container">
-            <div className="app-wrapper">
+      <div className="A-modalBackground">
+        <div className="A-modalContainer">
+          <div className="A-titleCloseBtn"></div>
+          <div className="A-container">
+            <div className="A-app-wrapper">
               <div>
-                <h2 className="title">Create your Account</h2>
+                <h2 className="A-title">Create your Account</h2>
               </div>
-              <form className="form-wrapper">
-                <div className="name">
-                  <div className="Fname">
-                  <label className="label">Enter First Name</label>
+              <form className="A-form-wrapper">
+                <div className="A-name">
+                  <div className="A-Fname">
+                  <label className="A-label">Enter First Name</label>
                   <input
-                    className="input"
+                    className="A-input"
                     type="text"
                     name="firstName"
                     value={values.firstName}
                     onChange={handleChange}
                   />
                   {errors.firstName && (
-                    <p className="error">{errors.fullname}</p>
+                    <p className="A-error">{errors.fullname}</p>
                   )}
                   </div>
-                  <div className="Lname">
-                  <label className="label">Enter Last Name</label>
+                  <div className="A-Lname">
+                  <label className="A-label">Enter Last Name</label>
                   <input
-                    className="input"
+                    className="A-input"
                     type="text"
                     name="lastName"
                     value={values.lastName}
                     onChange={handleChange}
                   />
                   {errors.lastName && (
-                    <p className="error">{errors.lastName}</p>
+                    <p className="A-error">{errors.lastName}</p>
                   )}
                   </div>
                 </div>
-                <div className="name">
-                  <div className="DOB">
-                  <label className="label">Enter DOB</label>
+                <div className="A-name">
+                  <div className="A-DOB">
+                  <label className="A-label">Enter DOB</label>
                   <input
-                    className="input"
+                    className="A-input"
                     type="text"
                     name="dob"
                     value={values.dob}
                     onChange={handleChange}
                   />
                   {errors.dob && (
-                    <p className="error">{errors.dob}</p>
+                    <p className="A-error">{errors.dob}</p>
                   )}
                   </div>
-                  <div className="ph">
-                  <label className="label">Enter Phone No.:</label>
+                  <div className="A-ph">
+                  <label className="A-label">Enter Phone No.:</label>
                   <input
-                    className="input"
+                    className="A-input"
                     type="text"
                     name="phone"
                     value={values.phone}
                     onChange={handleChange}
                   />
                   {errors.phone && (
-                    <p className="error">{errors.phone}</p>
+                    <p className="A-error">{errors.phone}</p>
                   )}
                   </div>
                 </div>
-                <div className="name">
-                  <div className="email">
-                  <label className="label">Enter Email</label>
+                <div className="A-name">
+                  <div className="A-email">
+                  <label className="A-label">Enter Email</label>
                   <input
-                    className="input"
+                    className="A-input"
                     type="text"
                     name="email"
                     value={values.email}
                     onChange={handleChange}
                   />
                   {errors.email && (
-                    <p className="error">{errors.email}</p>
+                    <p className="A-error">{errors.email}</p>
                   )}
                   </div>
-                  <div className="uname">
-                  <label className="label">Enter Username</label>
+                  <div className="A-uname">
+                  <label className="A-label">Enter Username</label>
                   <input
-                    className="input"
+                    className="A-input"
                     type="text"
                     name="username"
                     value={values.username}
                     onChange={handleChange}
                   />
                   {errors.username && (
-                    <p className="error">{errors.username}</p>
+                    <p className="A-error">{errors.username}</p>
                   )}
                   </div>
                 </div>
-                <div className="name">
-                  <div className="npassword">
-                  <label className="label">Enter password</label>
+                <div className="A-name">
+                  <div className="A-npassword">
+                  <label className="A-label">Enter password</label>
                   <input
-                    className="input"
+                    className="A-input"
                     type="password"
                     name="password"
                     value={values.password}
                     onChange={handleChange}
                   />
                   {errors.password && (
-                    <p className="error">{errors.password}</p>
+                    <p className="A-error">{errors.password}</p>
                   )}
                   </div>
-                  <div className="cpassword">
-                  <label className="label">Confirm Password</label>
+                  <div className="A-cpassword">
+                  <label className="A-label">Confirm Password</label>
                   <input
-                    className="input"
+                    className="A-input"
                     type="password"
                     name="Confrimpassword"
                     value={values.Confrimpassword}
                     onChange={handleChange}
                   />
                   {errors.Confrimpassword && (
-                    <p className="error">{errors.Confrimpassword}</p>
+                    <p className="A-error">{errors.Confrimpassword}</p>
                   )}
                   </div>
                 </div>
-                
-                <div className="footer">
-                  <div className="btnsignin">
-                  <button onClick={handleClick} className="submit">
+
+                <div className="A-footer">
+                  <div className="A-btnsignin">
+                  <button onClick={handleClick} className="A-submit">
                     Continue
                   </button>
                   </div>
-                  <div className="btnsignup">
+                  <div className="A-btnsignup">
                   <button>
                     Already a Member?
                   </button>

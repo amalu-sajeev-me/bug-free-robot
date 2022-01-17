@@ -4,57 +4,54 @@
 header{
     background-color: var(--mainColor);
 }
-.container{
+.A-container{
     width: 95%;
     margin: 0 auto;
     max-width: 1200px;
 }
-.container-flex{
+.A-container-flex{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 h2{
     width: 130px;
     padding: .5rem 0;
 }
-.list{
+.A-list{
     display: flex;
 }
-.listItem{
+.A-listItem{
     margin-left: 2em;
     color: black;
     text-decoration: none;
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
 }
-.activeItem{
+.A-activeItem{
     color: orange;
     border-bottom: .1em double #fff;
 }
-
 
 @media screen and (max-width: 768px){
 html{
     font-size: 13px;
 }
-.container-flex{
+.A-container-flex{
     flex-direction: column;
 }
 h2{
  width: 50%;
 }
 }
-
 @media screen and (max-width: 568px){
     html{
         font-size: 11px;
     }
-    .list{
+    .A-list{
         flex-direction: column;
     }
-    .listItem{
+    .A-listItem{
         margin-top: .2em;
     }
 }

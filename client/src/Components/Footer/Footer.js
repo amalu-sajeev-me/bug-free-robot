@@ -8,16 +8,16 @@ function Footer() {
     return (
         <>
             <footer>
-                <div className='container container-flex'>
-                    <div className='icons'>
-                        <TwitterIcon className='icon'/>
-                        <FacebookIcon className='icon'/>
-                        <InstagramIcon className='icon'/>
+                <div className='A-container A-container-flex'>
+                    <div className='A-icons'>
+                        <TwitterIcon className='A-icon'/>
+                        <FacebookIcon className='A-icon'/>
+                        <InstagramIcon className='A-icon'/>
                     </div>
-                    <div className='line'>
+                    <div className='A-line'>
                         <hr />
                     </div>
-                    <div className='copyright'>
+                    <div className='A-copyright'>
                         <p>All rights reserved &copy;</p>
                         <p>Made with React,Node</p>
                     </div>
