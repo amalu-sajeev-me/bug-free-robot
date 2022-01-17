@@ -22,9 +22,6 @@ function List() {
                           
                         </div>
                     </nav>
-                    <div className='icon'>
-                        <PersonIcon/>
-                    </div>
                 </div>
            </header> 
         </>

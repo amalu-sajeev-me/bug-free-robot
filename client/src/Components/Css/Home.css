@@ -1,6 +1,6 @@
 .mainSection{
     display: flex;
-    background-color: transparent;
+    /* background-color: transparent; */
     justify-content: space-around;
     align-items: center;
     margin-top: 5%;
@@ -60,4 +60,40 @@
     background-color: rgb(240, 27, 116);
     overflow: hidden;
     color: white;
+}
+
+@media screen and (max-width:900px){
+    html{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width:768px){
+    html{
+        font-size: 14px;
+    }
+    .mainSection{
+        flex-direction: column;
+        margin-top: 1em;
+    }
+    .contentBox {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 5rem;
+    }
+    .contentBox h1{
+        font-size: 1rem;
+    }
+    .contentBox p{
+        font-size: .9rem;
+    }
+
+    .btnBox{
+        width: 80%;
+    }
+}
+@media screen and (max-width:400px){
+    .btnBox{
+        width: 60%;
+    }
 }

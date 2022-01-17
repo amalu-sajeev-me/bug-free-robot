@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import '../Css/Home.css'
+import Signup from '../Login/Signup';
 
 function Home() {
+    const [modalOpen, setModalOpen] = useState(false);
+
     return (
         <>
            <div className='mainSection'>
@@ -12,10 +15,14 @@ function Home() {
                </div>
                 <div className='btnBox'>
                     <div className='btn'>
-                        <NavLink to='/signup' className="Signin">Join the community</NavLink>
+                        <NavLink to='/signup' className="Signup" onClick={() => {
+            setModalOpen(true);
+        }}>Join the community</NavLink>
+                        {modalOpen && <Signup setOpenModal={setModalOpen} />}
                     </div>
                     <div className='btn'>
-                        <NavLink to='/signin' className="Signup">Already a Member</NavLink>
+                        <NavLink to='/signin' className="Signin">Already a Member</NavLink>
+                        {modalOpen && <Signup setOpenModal={setModalOpen} />}
                     </div>
                 </div>
            </div>
