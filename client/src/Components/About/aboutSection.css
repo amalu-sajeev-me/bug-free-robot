@@ -1,11 +1,11 @@
 
-.container{
+.container1{
     height: 70vh;
     width: 100vw;
-    max-width: 80%;
+    max-width: 90%;
     background-color: rgb(237, 235, 245);
-    margin-top: 180px;
-    margin-left: 7%;
+    margin-top: 5%;
+    margin-left: 4%;
     margin-bottom: 10%;
     padding:50px;
     display: flex;
@@ -17,7 +17,7 @@
 
 
 
-.aboutSection {
+.aboutSection1 {
     height: 60vh;
     border-radius: 10px;
     width: 100vw;
@@ -25,11 +25,12 @@
     padding: .5em 1.5em;
     margin-left: 10%;
     margin-top: 6%;
+    margin-bottom: 6%;
     
 
   }
   
-  .aboutSectionGradient {
+  .aboutSectionGradient1 {
     height: 60vh;
     border-radius: 10px;
     width: 50vw;
@@ -37,48 +38,20 @@
     padding: .5em 1.5em;
     margin-left: 10%;
     margin-top: 6%;
-  }
-  
-  .aboutSectionContainer {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    background-color: rgb(255, 255, 255);
-    width: 80vw;
-    height: 80vh;
-    transform: translateX(-50%) translateY(-50%);
-    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.192);
-  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .Container > h2 {
-    font: 400 3vmax "Roboto";
-    color: tomato;
-    margin: 2vmax;
-  }
-  
-  .aboutSectionContainer > div > div > span {
-    font: 100 1vmax "Roboto";
-    color: rgba(0, 0, 0, 0.616);
-    text-align: center;
-    width: 80%;
-  }
-  
-  .Container {
-    border-left: 1px solid rgba(0, 0, 0, 0.116);
-  }
-  
-  .aboutSection > h2 {
-    color: rgba(0, 0, 0, 0.623);
-    font: 100 2vmax "Algerian";
-    margin: 2vmax;
+    margin-bottom: 6%;
   }
 
-  .aboutSectionGradient > h2{
-    color: rgba(0, 0, 0, 0.623);
-    font: 100 2vmax "Algerian";
-    margin: 2vmax;
-  }
+
+  .container1 h2 {
+    display: flex;
+    font-family: 'Algerian';
+    width:auto;
+    text-align: center;
+}    
+.container1 p{
+    text-align: justify;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200;
+}
+  
+  
