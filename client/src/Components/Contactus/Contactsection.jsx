@@ -11,6 +11,7 @@ const Contactsection= () => {
              <h2>Custemer Care Numbers</h2>
              <p>8383838383</p>
              <p>8484848484</p>
+             
          </div> 
            <div className="aboutSectionGradient">
              <h2>Location</h2>  
