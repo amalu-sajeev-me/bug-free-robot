@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+}
+.app-wrapper {
+    min-width: 250px;
+    min-height: 650px;
+    padding: 1px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    align-items: center;
+}
+.title{
+    color: #f80759;
+    text-align: center;
+    margin: 80px 0px 40px 0px;
+}
+.name{
+    margin: 20px;
+    color: #969292;
+    font-size: 16px;
+}
+.fullname,
+.signinemail,
+.signinpassword{
+    margin: 20px;
+    color: #969292;
+    font-size: 16px;
+}
+.fullname{
+  margin-top: 5px;
+}
+.name{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.password{
+    margin-bottom: 40px;
+}
+.Lname,
+.Fname,
+.DOB,
+.ph,
+.email,
+.uname,
+.npassword,
+.cpassword{
+    height: 32px;
+    font-size: 20px;
+    outline: none;
+    width: 45%;
+    margin-bottom: 5px;
+}
+.input {
+    outline: none;
+    width: 100%;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-style: 2px solid black;
+    margin-bottom: 30px;
+}
+.error {
+    color: red;
+}
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(200, 200, 200);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContainer {
+    width: 500px;
+    height: 500px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+  }
+  
+  .modalContainer .title {
+    display: inline-block;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .titleCloseBtn button {
+    background-color: transparent;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  
+  .modalContainer .body {
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+  
+  .modalContainer .footer {
+    flex: 20%;
+    align-items: center;
+  }
+  
+  .modalContainer .footer button {
+    width: 150px;
+    height: 45px;
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  #cancelBtn {
+    background-color: crimson;
+  }
+  @media screen and (max-width: 2048px){
+    .modalContainer {
+        width: 450px;
+        height: 600px;
+        margin-bottom: 100px;
+        border-radius: 12px;
+        flex-direction: column;
+      }
+      .fullname,
+    .signinemail,
+    .signinpassword{
+      margin-top: -10px;
+    }
+    .label{
+      font-size: 16px;
+    }
+      .app-wrapper {
+        text-align: center;
+
+    }
+    .name{
+        margin: 20px;
+        color: #969292;
+        font-size: 14px;
+    }
+    .input {
+        height: 20px;
+    }
+    .modalContainer .footer button {
+        width: 180px;
+        height: 50px;
+        margin-top: 10px;
+        padding: 2px;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+  }
+  @media screen and (max-width: 768px){
+    .modalContainer {
+        width: 400px;
+        height: 500px;
+        margin-bottom: 150px;
+        border-radius: 12px;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        display: flex;
+        flex-direction: column;
+        padding: 25px;
+      }
+      .app-wrapper {
+        text-align: center;
+
+    }
+    .fullname,
+    .signinemail,
+    .signinpassword{
+      font-size: 14px;
+      height: 50px;
+      margin-top: -10px;
+    }
+    .name{
+        margin: 30px;
+        color: #969292;
+        font-size: 14px;
+    }
+    .input {
+        height: 15px;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    .Lname,
+    .Fname,
+    .DOB,
+    .ph,
+    .email,
+    .uname,
+    .npassword,
+    .cpassword { 
+      height: 15px;
+      font-size: 14px;
+      margin-bottom: 5px;
+  }
+    .modalContainer .footer button {
+        width: 120px;
+        height: 40px;
+        padding: 5px;
+        border: none;
+        background-color: cornflowerblue;
+        color: white;
+        border-radius: 10px;
+        font-size: 12px;
+        cursor: pointer;
+      }
+  }
+  @media screen and (max-width: 546px){
+    .modalContainer {
+        width: 300px;
+        height: 400px;
+        margin-bottom: 200px;
+      }
+      .app-wrapper {
+          font-size: 10px;
+          text-align: center;
+          width: 200px;
+          height: 400px;
+    }
+    .title{
+        text-align: center;
+    }
+    .name{
+        margin: 10px;
+        color: #969292;
+        font-size: 12px;
+    }
+    .input {
+        height: 13px;
+        font-size: 12px;
+    }
+    .error {
+        color: red;
+        font-size: 10px;
+        margin-top: -10px;
+    }
+    .label{
+      font-size: 12px;
+    }
+    .Lname,
+    .Fname,
+    .DOB,
+    .ph,
+    .email,
+    .uname,
+    .npassword,
+    .cpassword{
+      height: 12px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    }
+    .modalContainer .footer button {
+        width: 100px;
+        height: 30px;
+        padding: 5px;
+        border: none;
+        background-color: cornflowerblue;
+        color: white;
+        border-radius: 10px;
+        font-size: 10px;
+        cursor: pointer;
+      }
+  }

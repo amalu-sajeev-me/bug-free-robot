@@ -33,18 +33,7 @@ h2{
     color: orange;
     border-bottom: .1em double #fff;
 }
-.icon{
-    color: #fff;
-    font-size: 1.5rem !important;
-    margin-right: 1em;
-    margin-left: 1.5em;
-}
 
-@media screen and (max-width: 1100px){
-    .icon{
-        margin-left: 1em;
-    }
-}
 
 @media screen and (max-width: 768px){
 html{
@@ -67,8 +56,5 @@ h2{
     }
     .listItem{
         margin-top: .2em;
-    }
-    .icon{
-        margin: 1em 1.5em;
     }
 }
