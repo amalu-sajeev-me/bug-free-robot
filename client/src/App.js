@@ -5,10 +5,14 @@ import Signup from './Components/Login/Signup';
 import Signin from './Components/Login/Signin';
 import List from './Components/Home/List';
 import Footer from './Components/Footer/Footer';
+import About from './Components/About/About';
+import Contactsection from './Components/Contactus/Contactsection';
 
 function App() {
   return (
     <>
+    <About/>
+      <Contactsection/>
     <List />
     <Switch>
       <Route path='/' exact component={Home}/>
@@ -22,5 +26,4 @@ function App() {
     </>
   );
 }
-
 export default App;
