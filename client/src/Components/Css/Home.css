@@ -1,0 +1,63 @@
+.mainSection{
+    display: flex;
+    background-color: transparent;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10%;
+    padding: 50px;
+}
+.contentBox{
+    border-radius: 10px;
+    width: 40%;
+    background-color: rgb(185, 179, 179);
+    padding: .5em 1.5em;
+}
+.contentBox h1{
+    font-size: 1.5rem;
+    color: #301934;
+}
+
+.contentBox p{
+    font-size: 1rem;
+    margin: 1em 0;
+    font-family: 'Poppins', sans-serif;
+}
+.Signin {
+    border: 2px solid rgb(97, 93, 93);
+    border-radius: .5em;
+    display: inline-block;
+    font-size: 1.2rem;
+    padding: .5em 1.5em;
+    color: black;
+    /* background-image: linear-gradient(#fff,#fff),radial-gradient(circle at bottom right purple,orange);
+    background-origin: border-box;
+    background-clip: content-box,border-box; */
+    text-decoration: none;
+}
+.btn{
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.Signup {
+    border: 2px solid rgb(97, 93, 93);
+    border-radius: .5em;
+    padding: .5em 1.5em;
+    display: inline-block;
+    font-size: 1.2rem;
+    color: black;
+    /* background-image: linear-gradient(#fff,#fff),radial-gradient(circle at bottom right purple,orange);
+    background-origin: border-box;
+    background-clip: content-box,border-box; */
+    text-decoration: none;
+}
+
+.Signin:hover{
+    background-color: rgb(240, 27, 116);
+    overflow: hidden;
+    color: white;
+}
+.Signup:hover{
+    background-color: rgb(240, 27, 116);
+    overflow: hidden;
+    color: white;
+}

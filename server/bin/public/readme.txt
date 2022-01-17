@@ -1,0 +1,1 @@
+All the static files from the server will be served from this directory.
