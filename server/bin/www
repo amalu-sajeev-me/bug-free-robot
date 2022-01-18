@@ -3,12 +3,12 @@ const db = require("../db");
 
 const { PORT } = process.env;
 
-db()
-  .then(() => {
+db()//
+  .then(() => {//
     const serverMessage = `server started running at http://localhost:${PORT}`;
 
     const server = app.listen(PORT, console.log(serverMessage));
-  })
-  .catch((e) => {
-    console.log(e);
-  });
+  })//
+  .catch((e) => {//
+    console.log(e);//
+  });//
