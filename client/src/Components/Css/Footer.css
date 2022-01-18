@@ -5,23 +5,23 @@ footer{
     width: 100%;
     padding: .5em;
 }
- .line{
+ .A-line{
     width: 30%;
  }
  hr{
      margin-bottom: .5em;
  }
- .icon{
+ .A-icon{
      margin-right: 1em;
      color: white;
  }
-.copyright{
+.A-copyright{
     text-align: center;
     color: white;
     margin-bottom: .5em;
 }
 @media screen and (max-width: 1024px){
-    .line{
+    .A-line{
         width: 40%;
      }
 }
