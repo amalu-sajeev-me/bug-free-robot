@@ -1,7 +1,6 @@
 footer{
-    position: fixed;
-    bottom: 0;
-    background-color: black;
+    margin-top: -7px;
+    background-color: rgb(168, 158, 158);
     width: 100%;
     padding: .5em;
 }
@@ -25,8 +24,16 @@ footer{
         width: 40%;
      }
 }
+@media screen and (max-width: 768px){
+    footer{
+        margin-top: 165px;
+    }
+}
 @media screen and (max-width: 568px){
     hr{
         display: none;
+    }
+    footer{
+        margin-top: 160px;
     }
 }

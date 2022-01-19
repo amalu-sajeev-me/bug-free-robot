@@ -15,6 +15,7 @@
 }
 .A-title{
   color: #f80759;
+  width: 100%;
   text-align: center;
   margin: 80px 0px 40px 0px;
 }
@@ -70,19 +71,16 @@ align-items: center;
 .A-modalBackground {
   width: 100vw;
   height: 100vh;
-  background-color: rgba(200, 200, 200);
-  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .A-modalContainer {
   width: 500px;
   height: 500px;
   border-radius: 12px;
   background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.A-35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   display: flex;
   flex-direction: column;
   padding: 25px;
@@ -94,33 +92,15 @@ align-items: center;
   margin-top: 10px;
 }
 
-.A-titleCloseBtn {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.A-titleCloseBtn button {
-  background-color: transparent;
-  border: none;
-  font-size: 25px;
-  cursor: pointer;
-}
-
-.A-modalContainer .A-body {
+.A-body {
   flex: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.A-7rem;
+  font-size: 1rem;
   text-align: center;
 }
-
-.A-modalContainer .A-footer {
-  flex: 20%;
-  align-items: center;
-}
-
-.A-modalContainer .A-footer button {
+.A-footer button {
   width: 150px;
   height: 45px;
   margin: 10px;
@@ -132,10 +112,6 @@ align-items: center;
   font-size: 20px;
   cursor: pointer;
 }
-
-#cancelBtn {
-  background-color: crimson;
-}
 @media screen and (max-width: 2048px){
   .A-modalContainer {
       width: 450px;
@@ -144,35 +120,33 @@ align-items: center;
       border-radius: 12px;
       flex-direction: column;
     }
-    .A-fullname,
+  .A-fullname,
   .A-signinemail,
   .A-signinpassword{
     margin-top: -10px;
   }
-  .A-label{
-    font-size: 16px;
-  }
     .A-app-wrapper {
       text-align: center;
-
   }
   .A-error {
-    color: red;
-    font-size: 15px;
-    margin-top: -30px;
+    font-size: 14px;
+    margin-top: -29px;
 }
   .A-name{
       margin: 20px;
       color: #969292;
       font-size: 14px;
   }
-  .A-input {
-      height: 20px;
+  .A-label{
+    font-size: 17px;
   }
-  .A-modalContainer .A-footer button {
+  .A-input {
+      height: 18px;
+  }
+  .A-footer button {
       width: 180px;
       height: 50px;
-      margin-top: 10px;
+      margin-top: 35px;
       padding: 2px;
       border-radius: 10px;
       font-size: 16px;

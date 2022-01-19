@@ -1,15 +1,14 @@
 .A-mainSection{
     display: flex;
-    background-color: transparent;
-    /* background-color: transparent; */
     justify-content: space-around;
     align-items: center;
-    margin-top: 5%;
+    margin-top: 2%;
     padding: 50px;
 }
 .A-contentBox{
     border-radius: 10px;
     width: 40%;
+    height: 70vh;
     background-color: rgb(185, 179, 179);
     padding: .5em 1.5em;
 }
@@ -22,41 +21,37 @@
     margin: 1em 0;
     font-family: 'Poppins', sans-serif;
 }
-.A-Signin {
-    border: 2px solid rgb(97, 93, 93);
-    border-radius: .5em;
-    display: inline-block;
-    font-size: 1.2rem;
+.wel-note{
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgb(185, 179, 179);
     padding: .5em 1.5em;
-    color: black;
-    /* background-image: linear-gradient(#fff,#fff),radial-gradient(circle at bottom right purple,orange);
-    background-origin: border-box;
-    background-clip: content-box,border-box; */
-    text-decoration: none;
+    margin-bottom: 60px;
+}
+.right-contentBox{
+    border-radius: 10px;
+    width: 40%;
+    padding:5px;
 }
 .A-btn{
     margin-bottom: 1rem;
     text-align: center;
 }
-.A-Signup {
+.A-Signup,
+.A-Signin {
     border: 2px solid black;
+    border: none;
+    background-color: rgb(192, 107, 143);
     border-radius: .5em;
     padding: .5em 1.5em;
     display: inline-block;
     font-size: 1.2rem;
     color: black;
-    /* background-image: linear-gradient(#fff,#fff),radial-gradient(circle at bottom right purple,orange);
-    background-origin: border-box;
-    background-clip: content-box,border-box; */
     text-decoration: none;
 }
-.A-Signin:hover{
-    background-color: rgb(240, 27, 116);
-    overflow: hidden;
-    color: white;
-}
+.A-Signin:hover,
 .A-Signup:hover{
-    background-color: rgb(240, 27, 116);
+    background-color: brown;
     overflow: hidden;
     color: white;
 }
@@ -75,10 +70,17 @@
         flex-direction: column;
         margin-top: 1em;
     }
+    .right-contentBox{
+        border-radius: 10px;
+        width: 50%;
+        padding:5px;
+    }
     .A-contentBox {
         width: 90%;
+        height: auto;
         margin: 0 auto;
         margin-bottom: 5rem;
+        
     }
     .A-contentBox h1{
         font-size: 1rem;

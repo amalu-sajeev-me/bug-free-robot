@@ -15,7 +15,7 @@ function validation(values) {
     }
     if(!values.email){
         errors.email="Email is required."
-    }else if(!/\s+@\s+\.\s+/.test(values.email)){
+    }else if(!/\S+@\S+\.\S+/.test(values.email)){
         errors.email="Email is invalid."
     }
     

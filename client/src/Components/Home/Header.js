@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 // import logo from '../Images/logo.png';
-import '../Css/List.css';
+import '../Css/Header.css';
 
-function List() {
+function Header() {
     return (
         <>
            <header>
@@ -27,4 +27,4 @@ function List() {
     )
 }
 
-export default List
+export default Header

@@ -1,5 +1,5 @@
 :root{
-    --mainColor:#8B008B;
+    --mainColor: transparent;
 }
 header{
     background-color: var(--mainColor);
@@ -17,19 +17,21 @@ header{
 h2{
     width: 130px;
     padding: .5rem 0;
+    color: white;
 }
 .A-list{
     display: flex;
 }
 .A-listItem{
     margin-left: 2em;
-    color: black;
+    color: white;
     text-decoration: none;
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
 }
 .A-activeItem{
-    color: orange;
+    color: rgb(233, 49, 89);
+    overflow: hidden;
     border-bottom: .1em double #fff;
 }
 

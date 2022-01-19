@@ -1,18 +1,18 @@
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Components/Home/Home';
-import Signup from './Components/Login/Signup';
-import Signin from './Components/Login/Signin';
-import List from './Components/Home/List';
-import Footer from './Components/Footer/Footer';
 import About from './Components/About/About';
 import Contactsection from './Components/Contactus/Contactsection';
+import Header from './Components/Home/Header';
+import Signup from './Components/Login/Signup';
+import Signin from './Components/Login/Signin';
 function App() {
   return (
-    <>
-    
-    <List />
+    <div className='bg'>
+    <>    
+    <Header />
     <Switch>
+      
       <Route path='/' exact component={Home}/>
       <Route path='/signup' component={Signup} />
       <Route path='/signin' component={Signin} />
@@ -20,8 +20,8 @@ function App() {
       {/* <Route path='/Feature' component={Feature}/> */}
       <Route path='/Contact' component={Contactsection}/>
     </Switch>
-      <Footer/>
     </>
+    </div>
   )
 }
 export default App;
