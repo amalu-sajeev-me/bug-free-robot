@@ -5,23 +5,23 @@ footer{
     padding: .5em;
     font-family: 'Poppins', sans-serif;
 }
- .A-line{
+ .LP_F-line{
     width: 30%;
  }
  hr{
      margin-bottom: .5em;
  }
- .A-icon{
+ .LP_F-icon{
      margin-right: 1em;
      color: white;
  }
-.A-copyright{
+.LP_F-copyright{
     text-align: center;
     color: white;
     margin-bottom: .5em;
 }
 @media screen and (max-width: 1024px){
-    .A-line{
+    .LP_F-line{
         width: 40%;
      }
 }

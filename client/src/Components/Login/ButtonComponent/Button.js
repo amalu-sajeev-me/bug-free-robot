@@ -5,7 +5,7 @@ function Button({onClick, button}) {
     return (
         <div>
             <button
-                className='A-submit'
+                className='SG-submit'
                 onClick={onClick}
             >{button}</button>
         </div>

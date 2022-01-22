@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import Header from "../Home/Header";
 import Button from "./ButtonComponent/Button";
 import Input from "./InputComponent/Input";
 import "../Css/Login.css";
 import validation from "./validation";
+import LP_Header from "../Header/LP_Header";
 
 function Signup() {
   const history = useHistory();
@@ -37,60 +37,60 @@ function Signup() {
   }
   return (
     <>
-    <Header />
-      <div className="A-modalBackground">
-        <div className="A-modalContainer">
-          <div className="A-container">
-            <div className="A-app-wrapper">
+    <LP_Header />
+      <div className="SG-modalBackground">
+        <div className="SG-modalContainer">
+          <div className="SG-container">
+            <div className="SG-app-wrapper">
               <div>
-                <h2 className="A-title">Create your Account</h2>
+                <h2 className="SG-title">Create your Account</h2>
               </div>
-              <form className="A-form-wrapper">
-                <div className="A-name">
-                  <div className="A-Fname">
+              <form className="SG-form-wrapper">
+                <div className="SG-name">
+                  <div className="SG-Fname">
                   <Input label='Enter First Name' type="text" name="firstName" value={values.firstName}/>
-                  {errors.firstName && (<p className="A-error">{errors.fullname}</p>)}
+                  {errors.firstName && (<p className="SG-error">{errors.fullname}</p>)}
                   </div>
-                  <div className="A-Lname">
+                  <div className="SG-Lname">
                   <Input label='Enter Last Name' type="text" name="lastName" value={values.lastName}/>
-                  {errors.lastName && (<p className="A-error">{errors.lastName}</p>)}
+                  {errors.lastName && (<p className="SG-error">{errors.lastName}</p>)}
                   </div>
                 </div>
-                <div className="A-name">
-                  <div className="A-DOB">
+                <div className="SG-name">
+                  <div className="SG-DOB">
                   <Input label='Enter DOB' type="text" name="dob" value={values.dob}/>
-                  {errors.dob && (<p className="A-error">{errors.dob}</p>)}
+                  {errors.dob && (<p className="SG-error">{errors.dob}</p>)}
                   </div>
-                  <div className="A-ph">
+                  <div className="SG-ph">
                   <Input label='Enter Phone No' type="text" name="phone" value={values.phone}/>
-                  {errors.phone && (<p className="A-error">{errors.phone}</p>)}
+                  {errors.phone && (<p className="SG-error">{errors.phone}</p>)}
                   </div>
                 </div>
-                <div className="A-name">
-                  <div className="A-email">
+                <div className="SG-name">
+                  <div className="SG-email">
                   <Input label='Enter Email' type="text" name="email" value={values.email}/>
-                  {errors.email && (<p className="A-error">{errors.email}</p>)}
+                  {errors.email && (<p className="SG-error">{errors.email}</p>)}
                   </div>
-                  <div className="A-uname">
+                  <div className="SG-uname">
                   <Input label='Enter Username' type="text" name="username" value={values.username} onChange={handleChange}/>
-                  {errors.username && (<p className="A-error">{errors.username}</p>)}
+                  {errors.username && (<p className="SG-error">{errors.username}</p>)}
                   </div>
                 </div>
-                <div className="A-name">
-                  <div className="A-npassword">
+                <div className="SG-name">
+                  <div className="SG-npassword">
                   <Input label='Enter password' type="password" name="password" value={values.password} onChange={handleChange}/>
-                  {errors.password && (<p className="A-error">{errors.password}</p>)}
+                  {errors.password && (<p className="SG-error">{errors.password}</p>)}
                   </div>
-                  <div className="A-cpassword">
+                  <div className="SG-cpassword">
                   <Input label='Confirm Password' type="password" name="Confrimpassword" value={values.Confrimpassword} onChange={handleChange}/>
-                  {errors.Confrimpassword && (<p className="A-error">{errors.Confrimpassword}</p>)}
+                  {errors.Confrimpassword && (<p className="SG-error">{errors.Confrimpassword}</p>)}
                   </div>
                 </div>
-                <div className="A-footer">
-                  <div className="A-btnsignin">
+                <div className="SG-footer">
+                  <div className="SG-btnsignin">
                   <Button onClick={handlebtnClick} button='Continue' />
                   </div>
-                  <div className="A-btnsignup">
+                  <div className="SG-btnsignup">
                   <Button button='Already a Member?'onClick={handlebtnChange}/>
                   </div>
                 </div>

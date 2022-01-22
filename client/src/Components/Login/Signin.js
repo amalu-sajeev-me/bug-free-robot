@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-import Header from "../Home/Header";
 import Button from "./ButtonComponent/Button";
 import Input from "./InputComponent/Input";
 import "../Css/Login.css";
 import validation from "./validation";
+import LP_Header from "../Header/LP_Header";
 
 function Signin() {
   const history = useHistory();
@@ -41,27 +41,27 @@ function Signin() {
   }
   return (
     <>
-    <Header />
-      <div className="A-modalBackground">
-        <div className="A-modalContainer">
-          <div className="A-app-wrapper">
+    <LP_Header />
+      <div className="SG-modalBackground">
+        <div className="SG-modalContainer">
+          <div className="SG-app-wrapper">
             <div>
-              <h2 className="A-title">Welcome Back</h2>
+              <h2 className="SG-title">Welcome Back</h2>
             </div>
-            <form className="A-form-wrapper">
-              <div className="A-fullname">
+            <form className="SG-form-wrapper">
+              <div className="SG-fullname">
                 <Input label="Full Name" type="text" name="fullname" value={values.fullname} onChange={handleChange}/>
-                {errors.fullname && (<p className="A-error">{errors.fullname}</p>)}
+                {errors.fullname && (<p className="SG-error">{errors.fullname}</p>)}
               </div>
-              <div className="A-signinemail">
+              <div className="SG-signinemail">
                 <Input label='Email' type="email" name="email" value={values.email} onChange={handleChange}/>
-                {errors.email && (<p className="A-error">{errors.email}</p>)}
+                {errors.email && (<p className="SG-error">{errors.email}</p>)}
               </div>
-              <div className="A-signinpassword">
+              <div className="SG-signinpassword">
                 <Input label='Password' type="password" name="password" value={values.password} onChange={handleChange}/>
-                {errors.password && (<p className="A-error">{errors.password}</p>)}
+                {errors.password && (<p className="SG-error">{errors.password}</p>)}
               </div>
-              <div className="A-footer">
+              <div className="SG-footer">
                 <Button button='Continue' onClick={handlebtnClick}/>
                 <Button button='Not a member?' onClick ={handlebtnChange}/>
               </div>

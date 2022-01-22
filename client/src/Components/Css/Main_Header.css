@@ -1,0 +1,52 @@
+.MN-Container{
+    width: 95%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+.MN-Container-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+h2{
+    width: 130px;
+    padding: .5rem 0;
+    color: white;
+}
+.MN-list{
+    display: flex;
+}
+.MN-listItem{
+    margin-left: 2em;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+}
+.MN-activeItem{
+    color: rgb(233, 49, 89);
+    overflow: hidden;
+    border-bottom: .1em double #fff;
+}
+@media screen and (max-width: 768px){
+    html{
+        font-size: 13px;
+    }
+    .MN-Container-flex{
+        flex-direction: column;
+    }
+    h2{
+     width: 50%;
+    }
+    }
+    @media screen and (max-width: 568px){
+        html{
+            font-size: 11px;
+        }
+        .MN-list{
+            flex-direction: column;
+        }
+        .MN-listItem{
+            margin-top: .2em;
+        }
+    }

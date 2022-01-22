@@ -4,12 +4,12 @@
 header{
     background-color: var(--mainColor);
 }
-.A-container{
+.LP-container{
     width: 95%;
     margin: 0 auto;
     max-width: 1200px;
 }
-.A-container-flex{
+.LP-container-flex{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,17 +19,17 @@ h2{
     padding: .5rem 0;
     color: white;
 }
-.A-list{
+.LP-list{
     display: flex;
 }
-.A-listItem{
+.LP-listItem{
     margin-left: 2em;
     color: white;
     text-decoration: none;
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
 }
-.A-activeItem{
+.LP-activeItem{
     color: rgb(233, 49, 89);
     overflow: hidden;
     border-bottom: .1em double #fff;
@@ -39,7 +39,7 @@ h2{
 html{
     font-size: 13px;
 }
-.A-container-flex{
+.LP-container-flex{
     flex-direction: column;
 }
 h2{
@@ -50,10 +50,10 @@ h2{
     html{
         font-size: 11px;
     }
-    .A-list{
+    .LP-list{
         flex-direction: column;
     }
-    .A-listItem{
+    .LP-listItem{
         margin-top: .2em;
     }
 }

@@ -2,22 +2,22 @@ import React from 'react';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import '../Css/Footer.css';
+import '../Css/LP_Footer.css';
 
-function Footer() {
+function LP_Footer() {
     return (
         <>
             <footer>
-                <div className='A-container A-container-flex'>
-                    <div className='A-icons'>
-                        <TwitterIcon className='A-icon'/>
-                        <FacebookIcon className='A-icon'/>
-                        <InstagramIcon className='A-icon'/>
+                <div className='LP_F-container LP_F-container-flex'>
+                    <div className='LP_F-icons'>
+                        <TwitterIcon className='LP_F-icon'/>
+                        <FacebookIcon className='LP_F-icon'/>
+                        <InstagramIcon className='LP_F-icon'/>
                     </div>
-                    <div className='A-line'>
+                    <div className='LP_F-line'>
                         <hr />
                     </div>
-                    <div className='A-copyright'>
+                    <div className='LP_F-copyright'>
                         <p>All rights reserved &copy;</p>
                         <p>Made with React,Node</p>
                     </div>
@@ -27,4 +27,4 @@ function Footer() {
     )
 }
 
-export default Footer
+export default LP_Footer

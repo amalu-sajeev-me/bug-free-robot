@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "../Home/Header";
+import LP_Header from "../Header/LP_Header";
 import "./Contactsection.css";
 // import { Box } from "@mui/material";
 const Contactsection= () => {
   return (
     <>
-    <Header />
+    <LP_Header />
       <div className ="container2">
          <h1>Contact Us</h1> 
          <div className="aboutSection2">

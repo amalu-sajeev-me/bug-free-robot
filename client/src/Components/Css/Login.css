@@ -2,10 +2,10 @@
   margin: 0;
   padding: 0;
 }
-.A-container{
+.SG-container{
   width: 100%;
 }
-.A-app-wrapper {
+.SG-app-wrapper {
   min-width: 250px;
   min-height: 650px;
   padding: 1px;
@@ -13,50 +13,50 @@
   border-radius: 5px;
   align-items: center;
 }
-.A-title{
+.SG-title{
   color: #f80759;
   width: 100%;
   text-align: center;
   margin: 80px 0px 40px 0px;
 }
-.A-name{
+.SG-name{
   margin: 20px;
   color: #969292;
   font-size: 16px;
 }
-.A-fullname,
-.A-signinemail,
-.A-signinpassword{
+.SG-fullname,
+.SG-signinemail,
+.SG-signinpassword{
   margin: 20px;
   color: #969292;
   font-size: 16px;
 }
-.A-fullname{
+.SG-fullname{
 margin-top: 5px;
 }
-.A-name{
+.SG-name{
 display: flex;
 justify-content: space-between;
 align-items: center;
 }
-.A-password{
+.SG-password{
   margin-bottom: 40px;
 }
-.A-Lname,
-.A-Fname,
-.A-DOB,
-.A-ph,
-.A-email,
-.A-uname,
-.A-npassword,
-.A-cpassword{
+.SG-Lname,
+.SG-Fname,
+.SG-DOB,
+.SG-ph,
+.SG-email,
+.SG-uname,
+.SG-npassword,
+.SG-cpassword{
   height: 50px;
   font-size: 20px;
   outline: none;
   width: 45%;
   margin-bottom: 5px;
 }
-.A-input {
+.SG-input {
   outline: none;
   width: 100%;
   background-color: transparent;
@@ -66,17 +66,17 @@ align-items: center;
   border-bottom-style: 2px solid black;
   margin-bottom: 30px;
 }
-.A-error {
+.SG-error {
   color: red;
 }
-.A-modalBackground {
+.SG-modalBackground {
   width: 100vw;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.A-modalContainer {
+.SG-modalContainer {
   width: 500px;
   height: 500px;
   border-radius: 12px;
@@ -87,13 +87,13 @@ align-items: center;
   padding: 25px;
 }
 
-.A-modalContainer .A-title {
+.SG-modalContainer .SG-title {
   display: inline-block;
   text-align: center;
   margin-top: 10px;
 }
 
-.A-body {
+.SG-body {
   flex: 50%;
   display: flex;
   justify-content: center;
@@ -101,7 +101,7 @@ align-items: center;
   font-size: 1rem;
   text-align: center;
 }
-.A-footer button {
+.SG-footer button {
   width: 150px;
   height: 45px;
   margin: 10px;
@@ -114,37 +114,37 @@ align-items: center;
   cursor: pointer;
 }
 @media screen and (max-width: 2048px){
-  .A-modalContainer {
+  .SG-modalContainer {
       width: 450px;
       height: 600px;
       margin-bottom: 100px;
       border-radius: 12px;
       flex-direction: column;
     }
-  .A-fullname,
-  .A-signinemail,
-  .A-signinpassword{
+  .SG-fullname,
+  .SG-signinemail,
+  .SG-signinpassword{
     margin-top: -10px;
   }
-    .A-app-wrapper {
+    .SG-app-wrapper {
       text-align: center;
   }
-  .A-error {
+  .SG-error {
     font-size: 14px;
     margin-top: -29px;
 }
-  .A-name{
+  .SG-name{
       margin: 20px;
       color: #969292;
       font-size: 14px;
   }
-  .A-label{
+  .SG-label{
     font-size: 17px;
   }
-  .A-input {
+  .SG-input {
       height: 18px;
   }
-  .A-footer button {
+  .SG-footer button {
       width: 150px;
       height: 50px;
       padding: 2px;
@@ -154,51 +154,51 @@ align-items: center;
     }
 }
 @media screen and (max-width: 768px){
-  .A-modalContainer {
+  .SG-modalContainer {
       width: 400px;
       height: 500px;
       margin-bottom: 150px;
       border-radius: 12px;
       background-color: white;
-      box-shadow: rgba(0, 0, 0, 0.A-35) 0px 5px 15px;
+      box-shadow: rgba(0, 0, 0, 0.SG-35) 0px 5px 15px;
       display: flex;
       flex-direction: column;
       padding: 25px;
     }
-    .A-app-wrapper {
+    .SG-app-wrapper {
       text-align: center;
 
   }
-  .A-fullname,
-  .A-signinemail,
-  .A-signinpassword{
+  .SG-fullname,
+  .SG-signinemail,
+  .SG-signinpassword{
     font-size: 14px;
     height: 50px;
     margin-top: -10px;
   }
-  .A-name{
+  .SG-name{
       margin: 30px;
       color: #969292;
       font-size: 14px;
   }
-  .A-input {
+  .SG-input {
       height: 15px;
       font-size: 14px;
       margin-bottom: 10px;
   }
-  .A-Lname,
-  .A-Fname,
-  .A-DOB,
-  .A-ph,
-  .A-email,
-  .A-uname,
-  .A-npassword,
-  .A-cpassword { 
+  .SG-Lname,
+  .SG-Fname,
+  .SG-DOB,
+  .SG-ph,
+  .SG-email,
+  .SG-uname,
+  .SG-npassword,
+  .SG-cpassword { 
     height: 15px;
     font-size: 14px;
     margin-bottom: 5px;
 }
-  .A-modalContainer .A-footer button {
+  .SG-modalContainer .SG-footer button {
       width: 120px;
       height: 40px;
       padding: 5px;
@@ -211,50 +211,50 @@ align-items: center;
     }
 }
 @media screen and (max-width: 546px){
-  .A-modalContainer {
+  .SG-modalContainer {
       width: 300px;
       height: 400px;
       margin-bottom: 200px;
     }
-    .A-app-wrapper {
+    .SG-app-wrapper {
         font-size: 10px;
         text-align: center;
         width: 200px;
         height: 400px;
   }
-  .A-title{
+  .SG-title{
       text-align: center;
   }
-  .A-name{
+  .SG-name{
       margin: 10px;
       color: #969292;
       font-size: 12px;
   }
-  .A-input {
+  .SG-input {
       height: 13px;
       font-size: 12px;
   }
-  .A-error {
+  .SG-error {
       color: red;
       font-size: 10px;
       margin-top: -10px;
   }
-  .A-label{
+  .SG-label{
     font-size: 12px;
   }
-  .A-Lname,
-  .A-Fname,
-  .A-DOB,
-  .A-ph,
-  .A-email,
-  .A-uname,
-  .A-npassword,
-  .A-cpassword{
+  .SG-Lname,
+  .SG-Fname,
+  .SG-DOB,
+  .SG-ph,
+  .SG-email,
+  .SG-uname,
+  .SG-npassword,
+  .SG-cpassword{
     height: 12px;
   font-size: 12px;
   margin-bottom: 20px;
   }
-  .A-modalContainer .A-footer button {
+  .SG-modalContainer .SG-footer button {
       width: 100px;
       height: 30px;
       padding: 5px;

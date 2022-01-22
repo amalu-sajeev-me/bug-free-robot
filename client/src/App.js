@@ -7,6 +7,9 @@ import Signup from './Components/Login/Signup';
 import Signin from './Components/Login/Signin';
 import Feature from './Components/Features/Feature';
 import Dashboard from './Components/Dashboard/Dashboard';
+import Notification from './Components/Notification/Notification';
+import Messages from './Components/Messages/Messages';
+import Help from './Components/Help/Help';
 function App() {
   return (
     <div className='bg'>
@@ -20,6 +23,9 @@ function App() {
       <Route path='/Feature' component={Feature}/>
       <Route path='/Contact' component={Contactsection}/>
       <Route path='/dashboard' component={Dashboard} />
+      <Route path='/notification' component={Notification} />
+      <Route path='/message' component={Messages} />
+      <Route path='/help' component={Help} />
     </Switch>
     </>
     </div>
