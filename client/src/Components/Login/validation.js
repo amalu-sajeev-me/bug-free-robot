@@ -1,11 +1,12 @@
-import React from 'react'
-
 function validation(values) {
 
     let errors = {};
 
     if(!values.fullname){
         errors.fullname="Name is required."
+    }else if(values.fullname==='test'){
+    }else if(values.fullname !== 'test'){
+        errors.fullname='hmm... somethings wrong!!'
     }
     if(!values.firstName){
         errors.firstName="Firstname is required."
@@ -17,6 +18,9 @@ function validation(values) {
         errors.email="Email is required."
     }else if(!/\S+@\S+\.\S+/.test(values.email)){
         errors.email="Email is invalid."
+    }else if(values.email==='test@gmail.com'){
+    }else if(values.email !=='test@gmail.com'){
+        errors.email='Email is not matching'
     }
     
     if(!values.dob){
@@ -38,10 +42,13 @@ function validation(values) {
         errors.password="Password is required"
     }else if(values.password.length < 8){
         errors.password="Password mus be atleast 8 Charachter"
+    }else if(values.password==='test12345'){
+    }else if(values.password !== 'test12345'){
+        errors.password='Password is not matching'
     }
     if(!values.Confrimpassword){
         errors.Confrimpassword="Password is required"
-    }else if(values.password != values.Confrimpassword){
+    }else if(values.password !== values.Confrimpassword){
         errors.password="Password is not matching."
     }
     return errors;

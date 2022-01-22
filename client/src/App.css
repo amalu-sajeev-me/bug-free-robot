@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+::-webkit-scrollbar{
+  display: none;
+}
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 .bg{
   background-image: url(./Image/bg.jpg);

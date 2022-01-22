@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import Header from "../Home/Header";
 import Button from "./ButtonComponent/Button";
 import Input from "./InputComponent/Input";
-import "./Login.css";
+import "../Css/Login.css";
 import validation from "./validation";
 
 function Signin() {
@@ -21,10 +22,18 @@ function Signin() {
       [e.target.name]: e.target.value
     });
   };
+  const v_fullname = 'test';
+  const v_email = 'test@values.com';
+  const v_password = 'test12345';
   const handlebtnClick = (e) => {
     e.preventDefault();
     setErrors(validation(values));
     console.log(values);
+    if(values.fullname !== v_fullname && values.email !== v_email && values.password !== v_password){
+      
+    }else{
+      history.push('/dashboard')
+    }
   };
   const handlebtnChange = (e) => {
     e.preventDefault();
@@ -32,6 +41,7 @@ function Signin() {
   }
   return (
     <>
+    <Header />
       <div className="A-modalBackground">
         <div className="A-modalContainer">
           <div className="A-app-wrapper">

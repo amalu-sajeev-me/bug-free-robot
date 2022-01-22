@@ -1,10 +1,7 @@
 import React from 'react'
-import "../Login.css"
+import "../../Css/Login.css"
 
-function Input({ label, type = 'text', name, value, onChange }) {    
-      
-    
-      
+function Input({ label, type = 'text', name, value, onChange }) {     
     return (
         <div>
             <label className="A-label">{label}</label>
@@ -18,6 +15,5 @@ function Input({ label, type = 'text', name, value, onChange }) {
         </div>
     )
 }
-
 export default Input
 

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import Header from "../Home/Header";
 import Button from "./ButtonComponent/Button";
 import Input from "./InputComponent/Input";
-import "./Login.css";
+import "../Css/Login.css";
 import validation from "./validation";
 
 function Signup() {
@@ -26,7 +27,6 @@ function Signup() {
       [e.target.name]: e.target.value,
     });
   };
-  console.log(values);
   const handlebtnClick = (e) => {
     e.preventDefault();
     setErrors(validation(values));
@@ -37,6 +37,7 @@ function Signup() {
   }
   return (
     <>
+    <Header />
       <div className="A-modalBackground">
         <div className="A-modalContainer">
           <div className="A-container">
@@ -47,27 +48,27 @@ function Signup() {
               <form className="A-form-wrapper">
                 <div className="A-name">
                   <div className="A-Fname">
-                  <Input label='Enter First Name' type="text" name="firstName" value={values.firstName} onChange={handleChange}/>
+                  <Input label='Enter First Name' type="text" name="firstName" value={values.firstName}/>
                   {errors.firstName && (<p className="A-error">{errors.fullname}</p>)}
                   </div>
                   <div className="A-Lname">
-                  <Input label='Enter Last Name' type="text" name="lastName" value={values.lastName} onChange={handleChange}/>
+                  <Input label='Enter Last Name' type="text" name="lastName" value={values.lastName}/>
                   {errors.lastName && (<p className="A-error">{errors.lastName}</p>)}
                   </div>
                 </div>
                 <div className="A-name">
                   <div className="A-DOB">
-                  <Input label='Enter DOB' type="text" name="dob" value={values.dob} onChange={handleChange}/>
+                  <Input label='Enter DOB' type="text" name="dob" value={values.dob}/>
                   {errors.dob && (<p className="A-error">{errors.dob}</p>)}
                   </div>
                   <div className="A-ph">
-                  <Input label='Enter Phone No.:' type="text" name="phone" value={values.phone} onChange={handleChange}/>
+                  <Input label='Enter Phone No' type="text" name="phone" value={values.phone}/>
                   {errors.phone && (<p className="A-error">{errors.phone}</p>)}
                   </div>
                 </div>
                 <div className="A-name">
                   <div className="A-email">
-                  <Input label='Enter Email' type="text" name="email" value={values.email} onChange={handleChange}/>
+                  <Input label='Enter Email' type="text" name="email" value={values.email}/>
                   {errors.email && (<p className="A-error">{errors.email}</p>)}
                   </div>
                   <div className="A-uname">

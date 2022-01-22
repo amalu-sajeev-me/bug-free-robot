@@ -4,12 +4,14 @@ import '../Css/Home.css'
 import Footer from '../Footer/Footer';
 import Signin from '../Login/Signin';
 import Signup from '../Login/Signup';
+import Header from './Header';
 
 function Home() {
     const [modalOpen, setModalOpen] = useState(false);
 
     return (
         <>
+        <Header />
            <div className='A-mainSection'>
                <div className='A-contentBox'>
                    <h1>INTRODUCTION</h1>

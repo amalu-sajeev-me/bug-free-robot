@@ -1,8 +1,11 @@
 import React from "react";
+import Header from "../Home/Header";
 import "./aboutSection.css";
 // import { Box } from "@mui/material";
 const About = () => {
   return (
+    <>
+    <Header />
       <div className ="container1">
         <h1>About Us</h1> 
          <div className="aboutSection1">
@@ -17,6 +20,7 @@ const About = () => {
 
            </div>
       </div>
+      </>
   );
 };
 
