@@ -21,3 +21,6 @@ SOAL capstone project
 viola .. ! your development server has started. 
 you can now start coding and all the changes will be reflected on browser real-time.
  
+
+### LIVE API
+you can use the live API at https://bug-free.herokuapp.com/
