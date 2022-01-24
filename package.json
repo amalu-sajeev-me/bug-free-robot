@@ -2,7 +2,10 @@
   "name": "capstone",
   "version": "1.0.0",
   "description": "SOAL capstone project",
-  "main": "index.js",
+  "main": "server/bin/www.js",
+  "engines": {
+    "node": "16.x"
+  },
   "type": "module",
   "scripts": {
     "start": "node -r dotenv/config server/bin/www",
