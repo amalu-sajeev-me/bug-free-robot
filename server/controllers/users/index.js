@@ -1,2 +1,2 @@
-import create from "./create";
+import create from "./create.js";
 export { create };

@@ -1,0 +1,17 @@
+header {
+    background-color: rgb(53, 45, 45);
+    width: fit-content;
+    border: 2px solid black;
+    padding: 1em;
+    position: relative;
+    float: right;
+}
+nav> a {
+    padding: 2em 4em;
+    color: white;
+    text-decoration: none;
+}
+
+br {
+    clear: both;
+}
