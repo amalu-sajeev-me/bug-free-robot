@@ -1,4 +1,4 @@
-const session = require("express-session");
+import session from "express-session";
 
 const options = {
   secret: "not-a-secret-now",
@@ -7,4 +7,6 @@ const options = {
   cookie: { secure: true },
 };
 
-exports.session = session(options);
+const session_ = session(options);
+
+export { session_ };

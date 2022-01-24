@@ -1,3 +1,5 @@
-const cors = require("cors");
+import cors from "cors";
 
-exports.cors = cors();
+const cors_ = cors();
+
+export { cors_ };

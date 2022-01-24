@@ -1,4 +1,4 @@
-const bodyParser = require("body-parser");
+import bodyParser from "body-parser";
 
 const options = {
   url: {
@@ -7,6 +7,8 @@ const options = {
   json: {},
 };
 
-exports.parseURI = bodyParser.urlencoded(options.url);
+const parseURI = bodyParser.urlencoded(options.url);
 
-exports.parseJSON = bodyParser.json(options.json);
+const parseJSON = bodyParser.json(options.json);
+
+export { parseURI, parseJSON };

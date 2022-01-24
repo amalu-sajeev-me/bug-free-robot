@@ -1,5 +1,5 @@
-const { cors } = require("./cors");
-const { parseURI, parseJSON } = require("./body-parser");
-const { session } = require("./express-session");
+import { cors_ } from "./cors.js";
+import { parseURI, parseJSON } from "./body-parser.js";
+import { session_ } from "./express-session.js";
 
-exports.middlewares = [cors, parseURI, parseJSON, session];
+export default [cors_, parseURI, parseJSON, session_];

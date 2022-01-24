@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "SOAL capstone project",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "node -r dotenv/config server/bin/www",
     "client": "cd client && npm start",
