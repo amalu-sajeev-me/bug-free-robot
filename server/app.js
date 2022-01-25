@@ -1,13 +1,13 @@
 import express from "express";
 
-import { member } from "./routers/member.js";
-import middlewares from "./middlewares/index.js";
+import { memberRouter } from "./routes/index.js";
+import middlewares from "./middleware/index.js";
 
 const app = express();
 
 app.use(middlewares);
 
-app.use("/api", member);
+app.use("/api/member", memberRouter);
 
 app.get("/", (req, res) => {
   res.send("hello world");
