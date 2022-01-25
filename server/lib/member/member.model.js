@@ -9,4 +9,8 @@ async function createUser(data) {
     .catch(console.log);
 }
 
-export { createUser };
+async function findUsers(data) {
+  return await User.find(data);
+}
+
+export { createUser, findUsers };
