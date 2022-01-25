@@ -1,9 +1,9 @@
 import app from "../app.js";
-import db from "../model/db.js";
+import { mongoConnect } from "../services/mongo.js";
 
 const { PORT } = process.env;
 
-db()
+mongoConnect()
   .then(() => {
     const serverMessage = `server started running at http://localhost:${PORT}`;
 
@@ -13,3 +13,4 @@ db()
     console.log(e);
     process.exit();
   });
+

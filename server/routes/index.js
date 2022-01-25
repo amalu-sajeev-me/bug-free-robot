@@ -1,1 +1,1 @@
-export { memberRouter } from "./member.router.js";
+export { memberRouter } from "./member/member.router.js";
