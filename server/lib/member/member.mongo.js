@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
+import bcrypt from "bcrypt";
+
 const { Schema, model } = mongoose;
+
 const userSchema = new Schema({
   firstName: {
     type: String,
@@ -37,6 +40,17 @@ const userSchema = new Schema({
 userSchema.virtual("fullName").get(function () {
   return `${this.firstName} ${this.lastName}`;
 });
+
+userSchema.methods.encryptPassword = async function () {
+  const saltRounds = 12;
+  const hash = await bcrypt.hash(this.password, saltRounds);
+  this.password = hash;
+};
+
+
+
+
+
 
 const User = model("User", userSchema);
 
