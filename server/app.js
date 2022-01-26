@@ -11,7 +11,7 @@ app.use(middlewares);
 app.use("/api/member", memberRouter);
 
 app.get("/", (req, res) => {
-  throw new Error("error testing");
+  // throw new Error("error testing");
   res.send("hello world");
 });
 

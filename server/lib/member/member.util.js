@@ -11,10 +11,7 @@ const schema = Joi.object({
 });
 
 async function isValidMember(member) {
-  const result = await schema.validateAsync(member).catch((err) => {
-    console.log(err.details);
-    throw err.details;
-  });
+  return await schema.validateAsync(member);
 }
 
 export { isValidMember };
