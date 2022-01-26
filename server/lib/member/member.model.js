@@ -1,9 +1,7 @@
 import { User } from "./member.mongo.js";
-import { isValidMember } from "./member.util.js";
 
 async function createUser(data) {
-  const member = await isValidMember(data);
-  const result = await User.create(member).then((result) => {
+  const result = await User.create(data).then((result) => {
     console.log(`new user added \n${data.username}`);
     return true;
   });

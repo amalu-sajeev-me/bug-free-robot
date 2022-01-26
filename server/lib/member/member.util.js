@@ -1,17 +1,10 @@
-import Joi from "joi";
+import { memberSchema } from "./member.schema.js";
 
-const schema = Joi.object({
-  firstName: Joi.string().alphanum().min(3).max(16).required(),
-  lastName: Joi.string().alphanum().min(3).max(16).required(),
-  dateOfBirth: Joi.date().required(),
-  email: Joi.string(),
-  phone: Joi.string(),
-  username: Joi.string().min(6).max(12).required(),
-  password: Joi.string().min(8).max(16).required(),
-});
-
-async function isValidMember(member) {
-  return await schema.validateAsync(member);
+async function validateMember(request, response, next) {
+  const memberDetails = request.body;
+  const { error, value } = await memberSchema.validateAsync(memberDetails);
+  if (error) throw error;
+  else next();
 }
 
-export { isValidMember };
+export { validateMember };

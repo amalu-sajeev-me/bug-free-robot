@@ -1,15 +1,43 @@
 import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 const userSchema = new Schema({
-  firstName: String,
-  lastName: String,
-  dateOfBirth: String,
+  firstName: {
+    type: String,
+    alias: "f_name",
+    required: true,
+    minlength: 3,
+    maxlength: 16,
+  },
+  lastName: {
+    type: String,
+    alias: "l_name",
+    required: true,
+    minlength: 3,
+    maxlength: 16,
+  },
+  dateOfBirth: {
+    type: String,
+    alias: "d_o_b",
+    required: true,
+  },
   email: String,
   phone: String,
-  username: String,
-  password: String,
+  username: {
+    type: String,
+    alias: "user",
+    required: true,
+  },
+  password: {
+    type: String,
+    alias: "pass",
+    required: true,
+  },
 });
 
-const User = model("user", userSchema);
+userSchema.virtual("fullName").get(function () {
+  return `${this.firstName} ${this.lastName}`;
+});
+
+const User = model("User", userSchema);
 
 export { User };
