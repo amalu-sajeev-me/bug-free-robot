@@ -1,4 +1,4 @@
-import app from "../app.js";
+import { app } from "../app.js";
 import { mongoConnect } from "../services/mongo.js";
 
 const { PORT } = process.env;
@@ -13,4 +13,3 @@ mongoConnect()
     console.log(e);
     process.exit();
   });
-
