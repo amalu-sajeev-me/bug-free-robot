@@ -4,9 +4,15 @@ const {
 } = process.env;
 
 async function mongoConnect() {
-  await mongoose.connect(DB_STRING).then(() => {
-    console.log(`connected to mongodb database`);
-  });
+  return await mongoose
+    .connect(DB_STRING)
+    .then(() => {
+      console.log(`connected to mongodb database`);
+      return [true, `connected to mongodb database`];
+    })
+    .catch((e) => {
+      return [false, e];
+    });
 }
 
 export { mongoConnect };

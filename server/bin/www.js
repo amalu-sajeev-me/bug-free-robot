@@ -1,15 +1,8 @@
-import { app } from "../app.js";
 import { mongoConnect } from "../services/mongo.js";
+import { shutdown, startServer } from "../services/server.js";
+import { app } from "../app.js";
 
-const { PORT } = process.env;
+const [databaseConnection, dbMessage] = await mongoConnect();
 
-mongoConnect()
-  .then(() => {
-    const serverMessage = `server started running at http://localhost:${PORT}`;
-
-    const server = app.listen(PORT, console.log(serverMessage));
-  })
-  .catch((e) => {
-    console.log(e);
-    process.exit();
-  });
+if (!databaseConnection) shutdown(dbMessage);
+else startServer(app);
