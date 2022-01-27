@@ -41,13 +41,21 @@ userSchema.virtual("fullName").get(function () {
   return `${this.firstName} ${this.lastName}`;
 });
 
-userSchema.methods.encryptPassword = async function () {
+userSchema.method("encryptPassword", encryptPassword);
+
+userSchema.method("createAccount", createAccount);
+
+async function encryptPassword() {
   const saltRounds = 12;
   const hash = await bcrypt.hash(this.password, saltRounds);
   this.password = hash;
-};
+  return this;
+}
 
-
+async function createAccount() {
+  await this.encryptPassword();
+  return await this.save();
+}
 
 
 
