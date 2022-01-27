@@ -18,8 +18,10 @@ async function fetchMembers(request, response) {
 async function memberSignin(request, response) {
   const result = await login(request.body);
   const successMsg = `you've succesfully loggedin! yayyy`;
-  if (result) response.json(new APIResponse(true, successMsg, result));
-  else throw new APIError(401, `invalid credentials`);
+  if (result) {
+    request.session.userID = result;
+    response.json(new APIResponse(true, successMsg, result));
+  } else throw new APIError(401, `invalid credentials`);
 }
 
 export { memberSignup, memberSignin, fetchMembers };

@@ -23,7 +23,7 @@ async function login({ username, password }) {
   const result = await bcrypt.compare(password, hash);
   if (result) console.log(`logged in!!`);
   else throw new APIError(401, `invalid credentials`);
-  return user;
+  return user._id;
 }
 
 export { createUser, findUsers, login };
