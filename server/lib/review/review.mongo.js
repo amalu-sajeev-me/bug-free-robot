@@ -1,9 +1,13 @@
 import { number } from "joi";
 import mongoose from "mongoose";
-const { Schema, model } = mongoose;
+import { memberSchema } from "../member/member.schema";
+const { Schema, model } = mongoose,
+  { ObjectId } = Schema;
 
 const reviewSchema = new Schema({
-  reviewer: String,
+  reviewer: {
+    type: ObjectId,
+  },
   workId: String,
   stars: number,
   feedback: String,
