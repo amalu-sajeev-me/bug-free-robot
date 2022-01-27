@@ -1,4 +1,4 @@
-import { createUser, findUsers } from "./member.model.js";
+import { createUser, findUsers, login } from "./member.model.js";
 
 async function memberSignup(request, response, next) {
   const { body } = request;
@@ -19,4 +19,10 @@ async function fetchMembers(request, response) {
     .catch(console.log);
 }
 
-export { memberSignup, fetchMembers };
+async function memberSignin(request, response) {
+  const result = await login(request.body);
+  if (result) response.send(`loggedin yayyy`);
+  else response.send(`oops! wrong credentials!`);
+}
+
+export { memberSignup, memberSignin, fetchMembers };

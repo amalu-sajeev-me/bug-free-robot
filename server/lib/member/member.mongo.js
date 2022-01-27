@@ -45,6 +45,7 @@ userSchema.method("encryptPassword", encryptPassword);
 
 userSchema.method("createAccount", createAccount);
 
+
 async function encryptPassword() {
   const saltRounds = 12;
   const hash = await bcrypt.hash(this.password, saltRounds);

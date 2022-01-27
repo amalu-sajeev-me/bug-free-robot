@@ -8,7 +8,7 @@ const app = express();
 
 app.use(middlewares);
 
-app.use("/api/member", memberRouter);
+app.use("/api/members", memberRouter);
 
 app.get("/", (req, res) => {
   // throw new Error("error testing");
