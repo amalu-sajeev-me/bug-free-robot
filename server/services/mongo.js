@@ -1,7 +1,5 @@
 import mongoose from "mongoose";
-const {
-  DB_STRING = "mongodb+srv://dev:passmein@cluster0.gsr2u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-} = process.env;
+const { DB_STRING } = process.env;
 
 async function mongoConnect() {
   
