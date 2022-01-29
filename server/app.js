@@ -1,12 +1,19 @@
-const express = require("express");
+import express from "express";
 
-const { middlewares } = require("./middlewares");
+import { memberRouter } from "./lib/member/member.router.js";
+import middlewares from "./middleware/index.js";
+import { handleError } from "./utils/errorHandler.js";
+
 const app = express();
 
 app.use(middlewares);
 
-app.use((req, res) => {
-  res.send("hello from backend server2");
+app.use("/api/members", memberRouter);
+
+app.get("/", (req, res) => {
+  // throw new Error("error testing");
+  res.send("hello world");
 });
 
-module.exports = app;
+app.use(handleError);
+export { app };

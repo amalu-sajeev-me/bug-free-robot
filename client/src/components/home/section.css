@@ -1,0 +1,16 @@
+section {
+    background-color: rgb(102, 95, 95);
+    display: inline-block;
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    box-shadow: 1px 3px 5px gray;
+}
+section > .content {
+    padding: 1rem;
+}
+section > .heading{
+    padding: 0.4rem;
+    background-color: lightgray;
+    color: black;
+}
