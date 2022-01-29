@@ -2,11 +2,11 @@ function validation(values) {
 
     let errors = {};
 
-    if(!values.fullname){
-        errors.fullname="Name is required."
-    }else if(values.fullname==='test'){
-    }else if(values.fullname !== 'test'){
-        errors.fullname='hmm... somethings wrong!!'
+    if(!values.username){
+        errors.username="Username is required."
+    }else if(values.username==='test'){
+    }else if(values.username !== 'test'){
+        errors.username='hmm... somethings wrong!!'
     }
     if(!values.firstName){
         errors.firstName="Firstname is required."
@@ -34,9 +34,6 @@ function validation(values) {
         errors.phone="Phone no. is required"
     }else if(values.phone.length < 13){
         errors.phone="Number must be valid."
-    }
-    if(!values.username){
-        errors.username="Username is required."
     }
     if(!values.password){
         errors.password="Password is required"

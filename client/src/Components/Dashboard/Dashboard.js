@@ -7,7 +7,7 @@ function Dashboard() {
   <>
     <Main_Header />
     <div className='DH-MainContainer'>
-      Dashboard page
+      <div className='SHbar'></div>
     </div>
   </>
   );

@@ -24,14 +24,13 @@
   color: #969292;
   font-size: 16px;
 }
-.SG-fullname,
-.SG-signinemail,
+.SG-username,
 .SG-signinpassword{
   margin: 20px;
   color: #969292;
   font-size: 16px;
 }
-.SG-fullname{
+.SG-username{
 margin-top: 5px;
 }
 .SG-name{
@@ -121,8 +120,7 @@ align-items: center;
       border-radius: 12px;
       flex-direction: column;
     }
-  .SG-fullname,
-  .SG-signinemail,
+  .SG-username,
   .SG-signinpassword{
     margin-top: -10px;
   }
@@ -169,8 +167,7 @@ align-items: center;
       text-align: center;
 
   }
-  .SG-fullname,
-  .SG-signinemail,
+  .SG-username,
   .SG-signinpassword{
     font-size: 14px;
     height: 50px;
