@@ -5,6 +5,9 @@ class APIError extends Error {
     this.name = "API Error";
     this.message = message;
   }
+  static scream(statusCode, message) {
+    throw new APIError(statusCode, message);
+  }
 }
-
-export { APIError };
+const scream = APIError.scream;
+export { APIError, scream };

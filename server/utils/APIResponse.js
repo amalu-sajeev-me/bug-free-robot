@@ -5,6 +5,10 @@ class APIResponse {
     this.message = message;
     if (response) this.response = response;
   }
+  static say(status, message, response = null) {
+    return new APIResponse(status, message, response);
+  }
 }
 
-export { APIResponse };
+const say = APIResponse.say;
+export { APIResponse, say };
