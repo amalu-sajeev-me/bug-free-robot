@@ -12,8 +12,8 @@ function Profile() {
         axios.get('https://bug-free.herokuapp.com/api/members/all')
         .then(res => {
             console.log(res);
-            setFname(res.data.response[1].firstName);
-            setLname(res.data.response[1].lastName);
+            setFname(res.data.response[2].firstName);
+            setLname(res.data.response[2].lastName);
         })
 
   return (
@@ -23,10 +23,20 @@ function Profile() {
         <Sidebar/>
         <div className='PF-subContainer'>
             <div className='PF-topContainer'>
-
+                <div className='img'>
+                    img
+                </div>
+                <div className='uname_review'>
+                    <div className='uname'>
+                        {fname} {lname}
+                    </div>
+                    <div className='review'>
+                        review
+                    </div>
+                </div>
             </div>
             <div className='PF-button'>
-
+                edit profile
             </div>
             <div className='PF-bottomContainer'>
                 <Infobar />
