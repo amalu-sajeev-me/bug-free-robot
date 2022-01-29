@@ -10,6 +10,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import Notification from './Components/Notification/Notification';
 import Messages from './Components/Messages/Messages';
 import Help from './Components/Help/Help';
+import Profile from './Components/profile/Profile';
 function App() {
   return (
     <div className='bg'>
@@ -26,6 +27,7 @@ function App() {
       <Route path='/notification' component={Notification} />
       <Route path='/message' component={Messages} />
       <Route path='/help' component={Help} />
+      <Route path='/profile' component={Profile} />
     </Switch>
     </>
     </div>

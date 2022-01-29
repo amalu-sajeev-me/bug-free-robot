@@ -1,0 +1,51 @@
+.SB-mainContainer{
+    position: absolute;
+    left: 87%;
+    
+}
+.head-text{ 
+    font-size: 19px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.head-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 50%; 
+    background: rgb(168, 158, 158);;
+    height: 20px;
+    width: 200px;
+}
+.sidebar{
+    text-align: left;
+    width: 200px;
+    background: rgb(168, 158, 158);
+    position: absolute;
+    height: 75vh;
+    right: -100%;
+}
+.sidebar.active{
+    right: 0;
+}
+ul{
+    padding: 0;
+    margin-top: 10%;
+}
+ul li{
+    list-style-type: none;
+    padding: 15px;
+    background-color: rgb(83, 82, 82);
+    margin-top: 1px;
+}
+ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 2px;
+    font-size: 18px;
+}
+ul :hover,
+ul .active{
+    background: rgb(56, 55, 55);
+}

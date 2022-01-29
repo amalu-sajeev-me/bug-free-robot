@@ -1,0 +1,29 @@
+.PF-MainContainer{
+    color: white;
+    width: 100%;
+    height: 83vh;
+    text-align: center;
+    margin-top: 0%;
+    font-family: 'Poppins', sans-serif;
+}
+.PF-bottomContainer{
+    padding: 0,1em;
+    position: relative;
+    top: 250px;
+    width: 1000px;
+    height: 350px;
+    left: 200px;
+    border: 1px solid black;
+    background: rgb(168, 158, 158);
+    display: flex;
+}
+.PF-userinfo{
+    position: relative;
+    left: 80px;
+    top: 15px;
+    text-align: left;
+    width: 70%;
+    height: 40vh;
+    padding: 10px;
+    background: rgb(78, 77, 77);
+}

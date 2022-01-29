@@ -7,6 +7,8 @@ footer{
 }
  .LP_F-line{
     width: 30%;
+    position: relative;
+    left: 35%;
  }
  hr{
      margin-bottom: .5em;
@@ -14,11 +16,15 @@ footer{
  .LP_F-icon{
      margin-right: 1em;
      color: white;
+     position: relative;
+     top: 20px;
  }
 .LP_F-copyright{
-    text-align: center;
+    text-align: right;
     color: white;
     margin-bottom: .5em;
+    position: relative;
+    bottom: 30px;
 }
 @media screen and (max-width: 1024px){
     .LP_F-line{
