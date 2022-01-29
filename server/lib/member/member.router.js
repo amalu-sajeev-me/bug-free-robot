@@ -17,4 +17,9 @@ memberRouter
 
 memberRouter.route("/login").post(catchAsync(memberSignin));
 
+memberRouter.route("/logout").get((request, response) => {
+  request.session.destroy();
+  response.send("/api/members/login");
+});
+
 export { memberRouter };
