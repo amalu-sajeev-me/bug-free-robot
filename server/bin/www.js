@@ -1,3 +1,4 @@
+// await import("dotenv").then((_) => _.config());
 // import network service modules
 import * as services from "../services/index.js";
 
