@@ -49,3 +49,65 @@ ul :hover,
 ul .active{
     background: rgb(56, 55, 55);
 }
+@media screen and (max-width: 2048px){
+    .SB-mainContainer{
+        position: absolute;
+        left: 87%;
+        
+    }
+}
+@media screen and (max-width: 768px){
+    .SB-mainContainer{
+        position: absolute;
+        left: 81%;
+        
+    }
+    .head-text{ 
+        font-size: 14px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .head-container {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-right: 50%; 
+        height: 20px;
+        width: 130px;
+    }
+    .sidebar{
+        text-align: left;
+        width: 130px;
+        position: absolute;
+        height: 68vh;
+        right: -100%;
+    }
+}
+@media screen and (max-width: 546px){
+    .SB-mainContainer{
+        position: absolute;
+        left: 81%;
+    }
+    .head-text{ 
+        font-size: 14px;
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .head-container {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-right: 50%; 
+        height: 20px;
+        width: 105px;
+    }
+    .sidebar{
+        text-align: left;
+        width: 105px;
+        position: absolute;
+        height: 65vh;
+        right: -100%;
+    }
+}

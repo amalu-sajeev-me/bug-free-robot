@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Main_Header from '../Header/Main_Header';
 import axios from 'axios';
 import '../Css/Profile.css';
@@ -11,20 +11,19 @@ import { useHistory } from 'react-router-dom';
 
 function Profile() {
     const history = useHistory();
-    const [fname, setFname] = useState("")
-    const [lname, setLname] = useState("")
+    const [users, setUsers] = useState([])
+    useEffect(()=> {
         axios.get('https://bug-free.herokuapp.com/api/members/all')
         .then(res => {
             console.log(res);
-            setFname(res.data.response[1].firstName);
-            setLname(res.data.response[1].lastName);
+           setUsers(res.data.response[1]);
         })
-
+    },[])
   return (
   <>
     <Main_Header />
     <div className='PF-MainContainer'>
-        <Sidebar/>
+        <Sidebar />
         <div className='PF-subContainer'>
             <div className='PF-topContainer'>
                 <div className='img'>
@@ -32,10 +31,13 @@ function Profile() {
                 </div>
                 <div className='uname_review'>
                     <div className='uname'>
-                        {fname} {lname}
+                        {users.firstName} {users.lastName}
+                        {/* {users.map((user) => (
+                            <option value={user.id}>{user.firstName} {user.lastName}</option>
+                        ))} */}
                     </div>
                     <div className='review'>
-                        <Rating className='Rating'/>
+                        <Rating />
                         <button className='reviewbtn' onClick={() => {history.push('/reviews')}}>Reviews</button>
                     </div>
                 </div>
@@ -44,7 +46,7 @@ function Profile() {
                 <button className='editpfbtn' onClick={() => {history.push('/editprofile')}}>Edit Profile</button>
             </div>
             <div className='PF-bottomContainer'>
-                <Infobar />
+                <Infobar/>
                 <div className='PF-userinfo'>
                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
                 </div>
