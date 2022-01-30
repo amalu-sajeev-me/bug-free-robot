@@ -30,4 +30,13 @@ async function memberSignin(request, response) {
   } else scream(...failureMsg);
 }
 
-export { memberSignup, memberSignin, fetchMembers };
+async function memberProfile(request, response) {
+  const { userID } = request.params;
+  const result = await User.findOne({ username: userID }, { password: false });
+  const successMsg = [true, null, result];
+  const failureMsg = [404, `such a user doesn't exists`];
+  !result && scream(...failureMsg);
+  response.json(say(...successMsg));
+}
+
+export { memberSignup, memberSignin, fetchMembers, memberProfile };
