@@ -1,5 +1,6 @@
 import {
   fetchMembers,
+  memberProfile,
   memberSignin,
   memberSignup,
 } from "./member.controller.js";
@@ -14,6 +15,10 @@ memberRouter.route("/all").get(catchAsync(fetchMembers));
 memberRouter
   .route("/checkin")
   .post(catchAsync(validateMember), catchAsync(memberSignup));
+
+memberRouter.route("/profile/:userID").get(catchAsync(memberProfile));
+
+
 
 memberRouter.route("/login").post(catchAsync(memberSignin));
 
