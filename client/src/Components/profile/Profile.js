@@ -5,15 +5,19 @@ import '../Css/Profile.css';
 import Sidebar from './Sidebar';
 import LP_Footer from '../Footer/LP_Footer';
 import Infobar from './Infobar';
+import Rating from './Rating';
+import User from '../../Image/user.jpg'
+import { useHistory } from 'react-router-dom';
 
 function Profile() {
+    const history = useHistory();
     const [fname, setFname] = useState("")
     const [lname, setLname] = useState("")
         axios.get('https://bug-free.herokuapp.com/api/members/all')
         .then(res => {
             console.log(res);
-            setFname(res.data.response[2].firstName);
-            setLname(res.data.response[2].lastName);
+            setFname(res.data.response[1].firstName);
+            setLname(res.data.response[1].lastName);
         })
 
   return (
@@ -24,19 +28,20 @@ function Profile() {
         <div className='PF-subContainer'>
             <div className='PF-topContainer'>
                 <div className='img'>
-                    img
+                    <img src={User} alt='Not Found'/>
                 </div>
                 <div className='uname_review'>
                     <div className='uname'>
                         {fname} {lname}
                     </div>
                     <div className='review'>
-                        review
+                        <Rating className='Rating'/>
+                        <button className='reviewbtn' onClick={() => {history.push('/reviews')}}>Reviews</button>
                     </div>
                 </div>
             </div>
             <div className='PF-button'>
-                edit profile
+                <button className='editpfbtn' onClick={() => {history.push('/editprofile')}}>Edit Profile</button>
             </div>
             <div className='PF-bottomContainer'>
                 <Infobar />

@@ -9,7 +9,7 @@
 .PF-bottomContainer{
     padding: 0,1em;
     position: relative;
-    top: 100px;
+    top: 65px;
     width: 1000px;
     height: 350px;
     left: 200px;
@@ -35,6 +35,10 @@
     display: flex;
     justify-content: space-around;
 }
+img{
+    width: 120px;
+    height: 128px;
+}
 .img{
     align-items: center;
     position: relative;
@@ -44,27 +48,50 @@
     height: 128px;
 }
 .uname_review{
-    padding: 10px;
+    padding: 20px;
     position: relative;
     left: 44px;
     width: 700px;
 }
-.PF-button{
-    height: 30px;
-    width: 10%;
-    position: relative;
-    top: 80px;
-    left: 13%;
-    background: rgb(168, 158, 158);
-}
 .uname{
-    width: 200px;
+    text-transform: uppercase;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: left;
+    width: fit-content;
     font-size: 20px;
     background: rgb(58, 57, 57);
     margin-bottom: 20px;
 }
+button:hover{
+    background: rgb(104, 101, 101);
+}
+.reviewbtn{
+    margin-bottom: 3px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    background: rgb(168, 158, 158);
+    border: none;
+    padding: 5px;
+}
+.editpfbtn{
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    position: relative;
+    right: 505px;
+    top: 55px;
+    background: rgb(168, 158, 158);
+    border: none;
+    padding: 5px;
+}
 .review{
-    width: 200px;
+    width: 300px;
+    align-items: center;
     font-size: 20px;
     background: rgb(58, 57, 57);
+    padding-top: 3px;
+    display: flex;
+    justify-content: space-around;
 }
