@@ -23,3 +23,4 @@ memberRouter.route("/logout").get((request, response) => {
 });
 
 export { memberRouter };
+

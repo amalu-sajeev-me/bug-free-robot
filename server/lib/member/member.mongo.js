@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import bcrypt from "bcrypt";
+import UserSchemaExtension from "./member.model.js";
 
 const { Schema, model } = mongoose;
 
@@ -37,30 +37,9 @@ const userSchema = new Schema({
   },
 });
 
-userSchema.virtual("fullName").get(function () {
-  return `${this.firstName} ${this.lastName}`;
-});
-
-userSchema.method("encryptPassword", encryptPassword);
-
-userSchema.method("createAccount", createAccount);
-
-
-async function encryptPassword() {
-  const saltRounds = 12;
-  const hash = await bcrypt.hash(this.password, saltRounds);
-  this.password = hash;
-  return this;
-}
-
-async function createAccount() {
-  await this.encryptPassword();
-  return await this.save();
-}
-
-
-
+userSchema.loadClass(UserSchemaExtension);
 
 const User = model("User", userSchema);
 
 export { User };
+
