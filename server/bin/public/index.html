@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Connecting Skilled People</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <h2 class="logo">CSP</h2>
+            </div>
+
+            <div class="menu">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">FEATURES</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+
+          
+        </div> 
+        <div class="content">
+            <h1><span>INTRODUCTION</span></h1><br>
+            <p class="par">CSP is an online marketplace for local services such as repair & maintenance, <br> 
+                 home cleaning, homecare & design, pest control, packers & movers, business 
+                <br> services,health & wellness, salon, etc. </p>
+
+                
+
+                <div class="form">
+                    <h2>Login Here</h2>
+                    <input type="email" name="email" placeholder="Enter Email Here">
+                    <input type="password" name="" placeholder="Enter Password Here">
+                    <button class="btnn"><a href="#">Login</a></button>
+
+                    <p class="link">Don't have an account<br>
+                    <a href="#">Sign up </a> here</a></p>
+                    
+
+                </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script>
+        const docReady = (fn) => window.addEventListener("load", fn);
+
+        docReady(function(){
+            const form = document.forms[0];
+            const values = new FormData(form);
+            const formElements = [];
+            for(val of values.entries()) formElements.push(val);
+            document.forms[0].onsubmit = (e) => {
+                e.preventDefault();
+                const inputData = [];
+                for(value of new FormData(e.target).entries()) 
+                inputData.push(value);
+                const params = new URLSearchParams(inputData);
+                const apiURI = new Request(`/api/members/login`, {
+                    method: 'POST',
+                    body: params
+                });
+                fetch(apiURI)
+                .then(data=>data.json())
+                .then(console.log);
+            }
+        });
+    </script>
+</body>
+</html>
