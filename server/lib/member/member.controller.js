@@ -12,22 +12,22 @@ async function memberSignup(request, response) {
   response.json(say(...successMsg));
 }
 
+async function memberSignin(request, response) {
+  const data = request.body;
+  const result = await User.login(data);
+  const successMsg = [true, `you've succesfully loggedin! yayyy`, result];
+  const failureMsg = [401, `invalid credentials`];
+  if (result) {
+    request.session.userID = result;
+    response.json(say(...successMsg));
+  } else scream(...failureMsg);
+}
+
 async function fetchMembers(request, response) {
   const result = await User.find({}, { firstName: 1, lastName: 1 });
   const successMsg = [true, null, result];
   const failureMsg = [401, `couldn't fetch the members`];
   result ? response.json(say(...successMsg)) : scream(...failureMsg);
-}
-
-async function memberSignin(request, response) {
-  const data = request.body;
-  const successMsg = [true, `you've succesfully loggedin! yayyy`];
-  const failureMsg = [401, `invalid credentials`];
-  const result = await User.login(data);
-  if (result) {
-    request.session.userID = result;
-    response.json(say(...successMsg));
-  } else scream(...failureMsg);
 }
 
 async function memberProfile(request, response) {
@@ -38,5 +38,10 @@ async function memberProfile(request, response) {
   !result && scream(...failureMsg);
   response.json(say(...successMsg));
 }
+
+async function updateProfile(request, response) {
+  
+}
+
 
 export { memberSignup, memberSignin, fetchMembers, memberProfile };
