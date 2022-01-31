@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Signup</title>
+<link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="main">
+        <div class="register">
+            <div class="h1-head">
+            <h2>Register Here</h2>
+            </div>
+            <form id='register'>
+                <label>FirstName </label>
+                <br />
+                <input type="text" name="firstName" id="fname" placeholder="Enter the firstname" />
+                <br />
+                <label>LastName </label>
+                <br />
+                <input type="text" name="lastName" id="lname" placeholder="Enter the lastname" />
+                <br />
+                <label>Date of birth</label>
+                <br />
+                <input type="date" name="dateOfBirth" id="dob" placeholder="Enter dob"/>
+                <br />
+                <label>Email </label>
+                <br />
+                <input type="text" name="email" id="email" placeholder="Enter email" />
+                <br />
+                <label>Username </label>
+                <br />
+                <input type="text" name="username" id="uname" placeholder="Enter the username" />
+                <br />
+                <label>Phone </label>
+                <br />
+                <input type="number" name="phone" id="phno" placeholder="Enter phone number" />
+                <br />
+                <label>Password </label>
+                <br />
+                <input type="password" name="password" id="pass" placeholder="Enter password" />
+                <br />
+                <button type="submit">Signup</button>
+                <button >Cancel</button>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        const register = document.getElementById('register');
+        register.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formEl = document.querySelector('form');
+            const formData = new FormData(formEl);
+            const formDataSerialized = Object.fromEntries(formData);
+            const jsonObject = {...formDataSerialized}
+            try{
+                const res = await fetch('https://bug-free.herokuapp.com/api/members/checkin',{
+                method: 'post',
+                body: JSON.stringify(jsonObject),
+                headers: {
+                    'Content-type': 'application/json'
+                }
+            });
+            const json = await res.json();
+            console.log(json);
+            }catch(err){
+                console.error(err);
+                alert('Error');
+            }
+        });
+    
+    </script>
+</body>
+</html>

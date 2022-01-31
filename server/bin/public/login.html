@@ -1,52 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>login</title>
+    <link rel="stylesheet" href="auth.css" />
     <script>
-        const docReady = (fn) => window.addEventListener("load", fn);
+      const docReady = (fn) => window.addEventListener("load", fn);
 
-        docReady(function(){
-            const form = document.forms[0];
-            const values = new FormData(form);
-            const formElements = [];
-            for(val of values.entries()) formElements.push(val);
-            document.forms[0].onsubmit = (e) => {
-                e.preventDefault();
-                const inputData = [];
-                for(value of new FormData(e.target).entries()) 
-                inputData.push(value);
-                const params = new URLSearchParams(inputData);
-                const apiURI = new Request(`/api/members/login`, {
-                    method: 'POST',
-                    body: params
-                });
-                fetch(apiURI)
-                .then(data=>data.json())
-                .then(console.log);
-            }
-        });
+      docReady(function () {
+        const form = document.forms[0];
+        const values = new FormData(form);
+        const formElements = [];
+        for (val of values.entries()) formElements.push(val);
+        document.forms[0].onsubmit = (e) => {
+          e.preventDefault();
+          const inputData = [];
+          for (value of new FormData(e.target).entries()) inputData.push(value);
+          const params = new URLSearchParams(inputData);
+          const apiURI = new Request(`/api/members/login`, {
+            method: "POST",
+            body: params,
+          });
+          fetch(apiURI)
+            .then((data) => data.json())
+            .then(console.log);
+        };
+      });
     </script>
-</head>
-<body>
-    <h1>login here</h1>
-    <form action="/api/members/login" method="post" name="member-login-form" enctype="multipart/form-data">
-        <fieldset>
-            <label for="user">
-                USERNAME
-                <br />
-                <input type="text" value="username" autofocus name="username" id="user" placeholder="Enter Your Username Here">
-            </label>
-            <br>
-            <label for="pass">
-                PASSWORD
-                <br />
-                <input type="text" value="password" name="password" id="pass" placeholder="Enter Your Password Here">
-            </label>
-            <button id="loginBtn">login</button>
-        </fieldset>
-    </form>
-</body>
+  </head>
+  <body>
+    <div class="main">
+      <div class="login">
+        <div class="h1-head">
+          <h1>login here</h1>
+        </div>
+        <form
+          action="/api/members/login"
+          method="post"
+          name="member-login-form"
+          enctype="multipart/form-data"
+          class="form-box"
+        >
+          <label for="user"> USERNAME </label>
+          <br />
+          <input
+            type="text"
+            value="username"
+            autofocus
+            name="username"
+            id="user"
+            placeholder="Enter Your Username Here"
+          />
+          <br />
+          <label for="pass"> PASSWORD </label>
+          <br />
+          <input
+            type="text"
+            value="password"
+            name="password"
+            id="pass"
+            placeholder="Enter Your Password Here"
+          />
+          <button id="loginBtn">login</button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
