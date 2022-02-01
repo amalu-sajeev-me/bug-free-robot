@@ -1,31 +1,15 @@
-import {
-  fetchMembers,
-  memberProfile,
-  memberSignin,
-  memberSignup,
-} from "./member.controller.js";
-import { Router } from "express";
-import { catchAsync } from "../../utils/catchAsync.js";
+import { createRouterSchema, createRouter } from "../../utils/ExpressHelper.js";
+import * as controller from "./member.controller.js";
 import { validateMember } from "./member.util.js";
 
-const memberRouter = Router();
-
-memberRouter.route("/all").get(catchAsync(fetchMembers));
-
-memberRouter
-  .route("/checkin")
-  .post(catchAsync(validateMember), catchAsync(memberSignup));
-
-memberRouter.route("/profile/:userID").get(catchAsync(memberProfile));
-
-
-
-memberRouter.route("/login").post(catchAsync(memberSignin));
-
-memberRouter.route("/logout").get((request, response) => {
-  request.session.destroy();
-  response.send("/api/members/login");
+const schema = createRouterSchema({
+  signup: ["post", "/checkin", validateMember, controller.memberSignup],
+  login: ["post", "/login", controller.memberSignin],
+  allMembers: ["get", "/all", controller.fetchMembers],
+  profile: ["get", "/profile/:userID", controller.memberProfile],
+  // logout: []
 });
 
-export { memberRouter };
+const memberRouter = createRouter(schema);
 
+export { memberRouter };

@@ -1,3 +1,6 @@
+import  httpTerminator  from "http-terminator";
+const { createHttpTerminator } = httpTerminator;
+
 // standalone function to start an HTTP server
 
 async function startServer(requestHandler) {
@@ -9,6 +12,9 @@ async function startServer(requestHandler) {
 
   // create a server using http module
   const server = http.createServer(requestHandler);
+
+  // close the server on a termination event
+  const httpTerminator = createHttpTerminator({ server });
 
   // message to print when the server starts running
   const serverMessage = `server started running at http://localhost:${PORT}`;

@@ -1,0 +1,73 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "CoPo",
+    "description": "capstone",
+    "version": "1.0.0",
+    "contact": {
+      "name": "API SUPPORT",
+      "url": "https://github.com/amalu-sajee-me",
+      "email": "amalu.sajeev.me@gmail.com"
+    }
+  },
+  "paths": {
+    "/api/members/checkin": {
+      "post": {
+        "summary": "new user account creation",
+        "produces": [],
+        "description": "create a new account",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "Create Account",
+            "required": true,
+            "description": "this is descriippttiioon",
+            "schema": {
+              "description": "your name",
+              "type": "string",
+              "title": "username",
+              "properties": {
+                "firstName": {
+                  "type": "string",
+                  "default": "Jane"
+                },
+                "lastName": {
+                  "type": "string",
+                  "default": "Doe"
+                },
+                "dateOfBirth": {
+                  "type": "string",
+                  "default": "1945/06/27"
+                },
+                "phone": {
+                  "type": "string",
+                  "default": "62589662022"
+                },
+                "email": {
+                  "type": "string",
+                  "default": "jane.doe@nowhere.here"
+                },
+                "username": {
+                  "type": "string",
+                  "default": "jane_doe"
+                },
+                "password": {
+                  "type": "string",
+                  "default": "passmeinnow"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

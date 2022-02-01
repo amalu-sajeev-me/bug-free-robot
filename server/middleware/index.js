@@ -4,6 +4,7 @@ import { parseURI, parseJSON } from "./body-parser.js";
 import { session_ } from "./express-session.js";
 import { _serveStatic } from "./serve-static.js";
 import logger from "./morgan.js";
+import { actuator_ } from "./actuator.js";
 export default [
   // helmet_,
   cors_,
@@ -12,4 +13,5 @@ export default [
   session_,
   _serveStatic,
   logger,
+  actuator_
 ];
