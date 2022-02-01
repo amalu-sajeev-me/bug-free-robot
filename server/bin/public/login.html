@@ -32,10 +32,14 @@
   </head>
   <body>
     <div class="main">
-      <div class="login">
+      <div class="Sub-main">
         <div class="h1-head">
           <h1>login here</h1>
         </div>
+        <div class="login">
+        <div class="bg">
+          <img src="./image/Signpic.jpg" id="bg1"/>
+      </div>
         <form
           action="/api/members/login"
           method="post"
@@ -63,8 +67,11 @@
             id="pass"
             placeholder="Enter Your Password Here"
           />
+          <br />
           <button id="loginBtn">login</button>
+          <p>Doesn't have a account?<a href="./signup.html">signup</a></p>
         </form>
+      </div>
       </div>
     </div>
   </body>
