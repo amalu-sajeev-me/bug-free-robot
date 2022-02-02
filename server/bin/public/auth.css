@@ -17,28 +17,59 @@ body{
 .login{
     height: 45vh;
 }
-.login, .register{ 
+#register{
+    position: relative;
+    right: 70px;
+    bottom: 5px;
+}
+.Sub-main{
     position: relative;
     top: 100px;
-    left: 42%;
-    color: white;
+    left: 31%;
     border-radius: 8px;
-    padding: 10px;
+    padding: 1px;
     text-align: center;
-    width: 250px;
-    background-color: rgba(58, 47, 47, 0.8);
+    width: 650px;
+    background-color: rgba(255, 255, 255, 1);
     box-shadow: rgb(0, 0, 0, 0.7) 8px 9px 5px;
+}
+.login, .register{ 
+    display: flex;
+    justify-content: space-between;
+    
+}
+.form-box{
+    position: relative;
+    right: 60px;
+}
+#bg1{
+    width: 350px;
+    height: 280px;
+}
+#bg{
+    position: relative;
+    top: 20px;
+    left: 10px;
+    width: 320px;
+    height: 350px;
 }
 .h1-head{
     text-transform: uppercase;
     background: rgba(206, 101, 14, 0.6);
 }
+label{
+    font-weight: 700;
+}
+input:hover{
+    box-shadow: rgb(0, 0, 0, 0.7) 3px 4px 5px;
+}
 input{
+    cursor: pointer;
     background: rgb(255, 255, 255, 0.5);
     padding: 2px;
     border-radius: 5px;
     outline: none;
-    border: 1px solid rgb(148, 58, 70);
+    border: 1px solid rgb(221, 23, 50);
 }
 
 button{
@@ -51,10 +82,127 @@ button{
     width: 100px;
     border-radius: 5px;
     border: none;
-    background: rgb(143, 70, 21);
+    background: rgb(252, 116, 25);
 }
 
 button:hover{
-    background: rgb(212, 96, 19);
+    background: rgb(255, 102, 0);
     box-shadow: rgb(0, 0, 0, 0.7) 3px 4px 5px;
+}
+@media screen and (max-width: 2048px){
+
+}
+@media screen and (max-width: 768px){
+    .form-box{
+        position: relative;
+        top: 30px;
+    }
+    .login{
+        height: 45vh;
+    }
+    #register{
+        position: relative;
+        right: 220px;
+        bottom: 5px;
+    }
+    .Sub-main{
+        width: 350px;
+    }
+    .login, .register{ 
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .form-box{
+        position: relative;
+        bottom: 20px;
+        right: 240px;
+    }
+    #bg1{
+        position: relative;
+        left: 20px;
+        width: 330px;
+        height: 300px;
+    }
+    #bg{
+        position: relative;
+        top: 30px;
+        left: 10px;
+        width: 320px;
+        height: 350px;
+    }
+    .h1-head{
+        text-transform: uppercase;
+        background: rgba(206, 101, 14, 0.6);
+    }
+    label{
+        font-weight: 600;
+    }
+    button{
+        margin-top: 8px;
+        padding: 2px;
+        font-size: 12px;
+        width: 80px;
+        background: rgb(252, 116, 25);
+    }
+}
+
+@media screen and (max-width: 536px){
+    body{
+        background-image: url('./image/bg.jpg');
+        background-repeat: no-repeat;
+        background-size: 100vw 100vh;
+    }
+    .form-box{
+        position: relative;
+        top: 30px;
+    }
+    .login{
+        height: 45vh;
+    }
+    #register{
+        position: relative;
+        right: 200px;
+        bottom: 5px;
+    }
+    .Sub-main{
+        width: 280px;
+    }
+    .login, .register{ 
+        display: flex;
+        justify-content: space-between;
+        
+    }
+    .form-box{
+        position: relative;
+        bottom: 20px;
+        right: 200px;
+    }
+    #bg1{
+        position: relative;
+        left: 20px;
+        width: 250px;
+        height: 300px;
+    }
+    #bg{
+        position: relative;
+        top: 30px;
+        left: 10px;
+        width: 260px;
+        height: 350px;
+    }
+    .h1-head{
+        text-transform: uppercase;
+        background: rgba(206, 101, 14, 0.6);
+    }
+    label{
+        font-weight: 600;
+    }
+    button{
+        margin-top: 8px;
+        padding: 2px;
+        font-size: 12px;
+        width: 80px;
+        background: rgb(252, 116, 25);
+    }
 }
