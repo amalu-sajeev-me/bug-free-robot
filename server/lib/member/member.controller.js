@@ -43,5 +43,8 @@ async function updateProfile(request, response) {
   
 }
 
+function logout(request, response) {
+  request.session.destroy();
+}
 
-export { memberSignup, memberSignin, fetchMembers, memberProfile };
+export { memberSignup, memberSignin, fetchMembers, memberProfile, logout };
