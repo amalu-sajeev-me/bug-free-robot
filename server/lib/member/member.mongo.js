@@ -1,7 +1,10 @@
 import mongoose from "mongoose";
 import UserSchemaExtension from "./member.model.js";
+import { Review } from "../review/review.mongo.js";
 
 const { Schema, model } = mongoose;
+const { ObjectId } = Schema.Types;
+
 
 const userSchema = new Schema({
   firstName: {
@@ -35,6 +38,10 @@ const userSchema = new Schema({
     alias: "pass",
     required: true,
   },
+  reviews: {
+    type: [ObjectId],
+    ref: 'Review'
+  }
 });
 
 userSchema.loadClass(UserSchemaExtension);

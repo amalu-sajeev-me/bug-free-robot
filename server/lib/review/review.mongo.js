@@ -1,4 +1,3 @@
-import { number } from "joi";
 import mongoose from "mongoose";
 import { memberSchema } from "../member/member.schema.js";
 import { User } from "../member/member.mongo.js";
@@ -8,13 +7,12 @@ const { Schema, model } = mongoose,
 const reviewSchema = new Schema({
   reviewer: {
     type: ObjectId,
-    ref: 'User'
+    ref: "User",
   },
-  workId: String,
-  stars: number,
   feedback: String,
+  stars: Number,
 });
 
-const Review = model("review", reviewSchema);
+const Review = model("Review", reviewSchema);
 
 export { Review };
