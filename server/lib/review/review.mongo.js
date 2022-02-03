@@ -5,7 +5,7 @@ const { Schema, model } = mongoose,
   { ObjectId } = Schema.Types;
 
 const reviewSchema = new Schema({
-  reviewer: {
+  owner: {
     type: ObjectId,
     ref: "User",
   },
