@@ -8,9 +8,16 @@ const reviewSchema = new Schema({
   owner: {
     type: ObjectId,
     ref: "User",
+    required: true
   },
-  feedback: String,
-  stars: Number,
+  feedback: {
+    type: String,
+    required: true
+  },
+  stars: {
+    type: Number,
+    required: true
+  },
 });
 
 const Review = model("Review", reviewSchema);

@@ -129,6 +129,41 @@
           }
         }
       }
+    },
+    "/api/reviews/{userID}/new": {
+      "post": {
+        "summary": "add a review",
+        "description": "give review to other users",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userID",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "review",
+            "schema": {
+              "properties": {
+                "feedback": {
+                  "type": "string",
+                  "default": "very good"
+                },
+                "stars": {
+                  "type": "number",
+                  "default": 5
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "review details"
+          }
+        }
+      }
     }
   }
 }
