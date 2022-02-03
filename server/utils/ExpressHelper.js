@@ -1,5 +1,5 @@
 import { Router } from "express";
-
+import { scream } from "./index.js";
 class ExpressHelper {
     static catchAsync(fn) {
         if (fn.constructor.name !== "AsyncFunction") return fn;
@@ -16,6 +16,8 @@ class ExpressHelper {
         if (!schema instanceof Array) throw "invalid schema";
         const router = Router();
         schema.forEach(item => {
+            if (!item instanceof Array)
+                scream(null, `value in not an array`);
             const [method, path, ...restParams] = item;
             const wrapAsyncParams = restParams.map(param => {
                 return ExpressHelper.catchAsync(param);

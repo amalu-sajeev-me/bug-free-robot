@@ -1,5 +1,5 @@
 import express from "express";
-
+import { reviewRouter } from "./lib/review/review.router.js"
 import { memberRouter } from "./lib/member/member.router.js";
 import { messageRouter } from "./lib/message/message.router.js";
 import middlewares from "./middleware/index.js";
@@ -19,6 +19,7 @@ app.use("/api/members", memberRouter);
 
 app.use("/api/messages", messageRouter);
 
+app.use("/api/reviews", reviewRouter);
 
 app.get("/", (req, res) => {
   // throw new Error("error testing");

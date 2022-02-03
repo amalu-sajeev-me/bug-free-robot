@@ -21,11 +21,9 @@
             "in": "body",
             "name": "Create Account",
             "required": true,
-            "description": "this is descriippttiioon",
             "schema": {
-              "description": "your name",
-              "type": "string",
-              "title": "username",
+              "description": "Enter your details",
+              "title": "user details",
               "properties": {
                 "firstName": {
                   "type": "string",
@@ -65,6 +63,69 @@
             "schema": {
               "type": "string"
             }
+          }
+        }
+      }
+    },
+    "/api/members/login": {
+      "post": {
+        "summary": "login to the dashboard",
+        "description": "login using username & password",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "login",
+            "required": true,
+            "schema": {
+              "title": "login here",
+              "description": "login using your username & password",
+              "properties": {
+                "username": {
+                  "type": "string",
+                  "default": "username"
+                },
+                "password": {
+                  "type": "string",
+                  "default": "password"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/members/all": {
+      "get": {
+        "summary": "get all registered members",
+        "description": "find registered members",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/members/profile/{userID}": {
+      "get": {
+        "summary": "member profile",
+        "description": "fetch a particular member profile",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "userID",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "profile details"
           }
         }
       }
