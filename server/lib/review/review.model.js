@@ -1,7 +1,7 @@
-import { Review } from "./review.mongo.js";
+import { User } from "../member/member.mongo.js";
 
-async function getAllreviews({ username }) {
-  return await Review.find({ username });
+export default class reviewSchemaExtension {
+    async addReview() {
+        
+    }
 }
-
-export { getAllreviews };

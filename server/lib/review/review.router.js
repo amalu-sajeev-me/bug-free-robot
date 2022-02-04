@@ -1,11 +1,12 @@
-import { Router } from "express";
-import { addReview } from "./review.controller.js";
+import { createRouterSchema, createRouter } from "../../utils/ExpressHelper.js";
+import { addReview, getReviews, updateReview } from "./review.controller.js";
+import { isValidReview } from "./review.util.js";
 
-
-const reviewRouter = Router();
-
-reviewRouter.route("/:userID/new").post(addReview);
-reviewRouter.route("/:username/:id").get();
-reviewRouter.route("/:username/new").post();
+const routerSchema = createRouterSchema({
+  all: ["get", "/:userID", getReviews],
+  add: ["post", "/:userID/new", isValidReview, addReview],
+  update: ["patch", "/:id", updateReview]
+});
+const reviewRouter = createRouter(routerSchema);
 
 export { reviewRouter };

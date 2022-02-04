@@ -1,14 +1,11 @@
-import Joi from "joi";
+import { reviewSchema } from "./review.schema.js";
+import { scream } from "../../utils/APIError.js";
 
-const schema = Joi.object({
-  reviewer: Joi.string(),
-  workId: Joi.string(),
-  stars: Joi.number,
-  feedback: Joi.string().min(3).max(64),
-});
-
-async function isValidReview(review) {
-  return await schema.validateAsync(review);
+async function isValidReview(request, resonse, next) {
+  const reviewBody = request.body;
+  const { error, value } = await reviewSchema.validateAsync(reviewBody);
+  error && scream(401, error.details);
+  next();
 }
 
 export { isValidReview };
