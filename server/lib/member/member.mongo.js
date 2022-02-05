@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import UserSchemaExtension from "./member.model.js";
 import { Review } from "../review/review.mongo.js";
+import { Action } from "../actions/action.mongo.js";
 
 const { Schema, model } = mongoose;
 const { ObjectId } = Schema.Types;
@@ -42,6 +43,10 @@ const userSchema = new Schema({
   reviews: {
     type: [ObjectId],
     ref: 'Review'
+  },
+  actions: {
+    type: [ObjectId],
+    ref: "Action"
   }
 });
 

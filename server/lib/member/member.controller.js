@@ -1,27 +1,49 @@
 import { scream, say } from "../../utils/index.js";
 import { User } from "../member/member.mongo.js";
-import { v2 as cloudinary } from "cloudinary";
+import { Action } from "../actions/action.mongo.js";
+import mongoose from "mongoose";
+const { connection } = mongoose;
+
+
 
 async function memberSignup(request, response) {
   const data = request.body;
   const existingUserMsg = [401, `user already exists`];
   const successMsg = [true, `succesfully created your account`];
   const failureMsg = [401, `failed to create the account`];
+  const session = await connection.startSession();
+
   (await User.userAlreadyExists(data)) && scream(...existingUserMsg);
-  const newUser = await new User(data).registerAccount();
-  !(newUser instanceof User) && scream(...failureMsg);
-  response.json(say(...successMsg));
+  await session.withTransaction(trancaction);
+  await session.endSession();
+
+  async function trancaction() {
+    const actionParams = ["USER", "Account Registration"];
+    const action = Action.activity(...actionParams);
+    const newUser = new User({...data, actions: action});
+    await newUser.registerAccount();
+    await action.save();
+    !(newUser instanceof User) && scream(...failureMsg);
+    response.json(say(...successMsg));
+  }
 }
 
 async function memberSignin(request, response) {
   const data = request.body;
-  const result = await User.login(data);
-  const successMsg = [true, `you've succesfully loggedin! yayyy`, result];
+  const successMsg = [true, `you've succesfully loggedin! yayyy`];
   const failureMsg = [401, `invalid credentials`];
-  if (result) {
-    request.session.userID = result;
-    response.json(say(...successMsg));
-  } else scream(...failureMsg);
+  const session = await connection.startSession();
+
+  await session.withTransaction(transaction);
+  await session.endSession();
+  async function transaction() {
+    const result = await User.login(data);
+    console.log(result);
+    if (result) {
+      request.session.userID = result;
+      response.json(say(...successMsg));
+    } else scream(...failureMsg);
+  }
 }
 
 async function fetchMembers(request, response) {

@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { isLoggedin } from "../../middleware/isLoggedin.js";
 
 const actionsRouter = Router();
 

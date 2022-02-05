@@ -2,7 +2,7 @@ import express from "express";
 import { reviewRouter } from "./lib/review/review.router.js"
 import { memberRouter } from "./lib/member/member.router.js";
 import { messageRouter } from "./lib/message/message.router.js";
-import { actionsRouter } from "./lib/actions/actions.router.js";
+import { actionsRouter } from "./lib/actions/action.router.js";
 import middlewares from "./middleware/index.js";
 import { serveSwagger, setupSwagger } from "./middleware/swagger.js";
 import { handleError } from "./utils/errorHandler.js";
