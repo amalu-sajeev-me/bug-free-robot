@@ -6,6 +6,7 @@ import { session_ } from "./express-session.js";
 import { _serveStatic } from "./serve-static.js";
 import logger from "./morgan.js";
 import { actuator_ } from "./actuator.js";
+import { uploadSingle } from "./multer.js";
 export default [
   // helmet_,
   methodOverride_,
@@ -16,4 +17,5 @@ export default [
   _serveStatic,
   logger,
   actuator_,
+  uploadSingle
 ];

@@ -12,6 +12,8 @@ const schema = createRouterSchema({
   allMembers: ["get", "/all", controller.fetchMembers],
 
   profile: ["get", "/profile/:userID", controller.memberProfile],
+
+  profilePic: ["post", "/:userID/pic", controller.uploadPic]
 });
 
 const memberRouter = createRouter(schema);

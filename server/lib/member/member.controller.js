@@ -1,5 +1,6 @@
 import { scream, say } from "../../utils/index.js";
 import { User } from "../member/member.mongo.js";
+import { v2 as cloudinary } from "cloudinary";
 
 async function memberSignup(request, response) {
   const data = request.body;
@@ -39,12 +40,30 @@ async function memberProfile(request, response) {
   response.json(say(...successMsg));
 }
 
-async function updateProfile(request, response) {
-  
-}
+async function updateProfile(request, response) {}
 
 function logout(request, response) {
   request.session.destroy();
+  response.send("logged out");
 }
 
-export { memberSignup, memberSignin, fetchMembers, memberProfile, logout };
+async function uploadPic(request, response) {
+  const { uploader } = cloudinary;
+  function uploadHandler(error, result) {
+    if (error) console.log(error);
+    else console.log(result);
+  }
+  const stream = uploader.upload_stream(uploadHandler)
+  request.on("data", stream.write).on("end", stream.end);
+  response.send("testing")
+}
+
+export {
+  memberSignup,
+  memberSignin,
+  fetchMembers,
+  memberProfile,
+  logout,
+  updateProfile,
+  uploadPic,
+};
