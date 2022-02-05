@@ -2,6 +2,7 @@ import { createRouterSchema, createRouter } from "../../utils/ExpressHelper.js";
 import * as controller from "./member.controller.js";
 import { validateMember } from "./member.util.js";
 import { isLoggedin } from "../../middleware/isLoggedin.js";
+import { uploadSingle } from "../../middleware/multer.js";
 
 const schema = createRouterSchema({
   signup: ["post", "/checkin", validateMember, controller.memberSignup],
@@ -14,7 +15,7 @@ const schema = createRouterSchema({
 
   profile: ["get", "/profile/:userID", isLoggedin, controller.memberProfile],
 
-  profilePic: ["post", "/:userID/pic", isLoggedin, controller.uploadPic]
+  profilePic: ["post", "/:userID/pic", isLoggedin, uploadSingle, controller.uploadPic]
 });
 
 const memberRouter = createRouter(schema);

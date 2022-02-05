@@ -48,14 +48,11 @@ function logout(request, response) {
 }
 
 async function uploadPic(request, response) {
-  const { uploader } = cloudinary;
-  function uploadHandler(error, result) {
-    if (error) console.log(error);
-    else console.log(result);
-  }
-  const stream = uploader.upload_stream(uploadHandler)
-  request.on("data", stream.write).on("end", stream.end);
-  response.send("testing")
+  if (!request.file) scream(401, "upload failed");
+  const { userID } = request.session;
+  const { path } = request.file;
+  const user = await User.findByIdAndUpdate(userID, {$set: {profilePic: path}})
+  user && response.json(say(true, "succesfully updated your profile picture"));
 }
 
 export {

@@ -38,6 +38,7 @@ const userSchema = new Schema({
     alias: "pass",
     required: true,
   },
+  profilePic: String,
   reviews: {
     type: [ObjectId],
     ref: 'Review'
