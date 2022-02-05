@@ -1,4 +1,6 @@
-// await import("dotenv").then((_) => _.config());
+import dotenv from "dotenv";
+if (process.env.NODE_ENV !== "production") dotenv.config();
+
 // import network service modules
 import * as services from "../services/index.js";
 
