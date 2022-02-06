@@ -36,6 +36,7 @@ const memberSignin = async (req, res) => {
 }
 
 const fetchMembers = async (req, res) => {
+  console.log(req.session);
   const users = await User.fetchMembers();
   const successMsg = [true, null, users];
   res.json(say(...successMsg));
