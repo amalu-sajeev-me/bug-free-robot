@@ -36,7 +36,8 @@ const memberSignin = async (req, res) => {
 }
 
 const fetchMembers = async (req, res) => {
-  console.log(req.session);
+  console.log("session will print here\n\n\n");
+  console.log(`this is session \n${req.session}`);
   const users = await User.fetchMembers();
   const successMsg = [true, null, users];
   res.json(say(...successMsg));
