@@ -23,7 +23,7 @@ const session_ = session({
   name: "userID",
   unset: "destroy",
   cookie: {
-    httpOnly: true,
+    httpOnly: false,
     path: "/",
     signed: true,
     // secure: true,
