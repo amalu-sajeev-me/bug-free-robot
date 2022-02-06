@@ -13,17 +13,22 @@ store.on("error", (e) => {
   console.error(`an error has occured in session Store \n${e}`);
 });
 
-const sessionOptions = {
+// const sessionOptions = ;
+
+const session_ = session({
   secret: SESSION_SECRET,
   resave: false,
   saveUninitialized: true,
   store,
+  name: "userID",
+  unset: "destroy",
   cookie: {
+    httpOnly: true,
+    path: "/",
+    signed: true,
     // secure: true,
-    sameSite: "none",
+    // sameSite: "none",
   },
-};
-
-const session_ = session(sessionOptions);
+});
 
 export { session_ };
