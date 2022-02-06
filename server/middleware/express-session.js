@@ -19,8 +19,8 @@ const sessionOptions = {
   saveUninitialized: true,
   store,
   cookie: {
+    secure: true,
     sameSite: "none",
-    secure: "auto",
   },
 };
 
