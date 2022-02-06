@@ -20,6 +20,7 @@ const sessionOptions = {
   store,
   cookie: {
     sameSite: "none",
+    secure: "auto",
   },
 };
 
