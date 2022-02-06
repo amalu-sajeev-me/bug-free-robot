@@ -6,75 +6,43 @@ const { connection } = mongoose;
 
 
 
-async function memberSignup(request, response) {
-  const data = request.body;
-  const existingUserMsg = [401, `user already exists`];
+const memberSignup = async (req, res) => {
+  const { body: data } = req;
   const successMsg = [true, `succesfully created your account`];
-  const failureMsg = [401, `failed to create the account`];
-  const session = await connection.startSession();
-
-  (await User.userAlreadyExists(data)) && scream(...existingUserMsg);
-  await session.withTransaction(trancaction);
-  await session.endSession();
-
-  async function trancaction() {
-    const actionParams = ["USER", "Account Registration"];
-    const action = Action.activity(...actionParams);
-    const newUser = new User({...data, actions: action});
-    await newUser.registerAccount();
-    await action.save();
-    !(newUser instanceof User) && scream(...failureMsg);
-    response.json(say(...successMsg));
-  }
+  const user = new User(data);
+  const result = await user.registerAccount();
+  result && res.json(say(...successMsg));
 }
 
-async function memberSignin(request, response) {
-  const data = request.body;
+const memberSignin = async (req, res) => {
   const successMsg = [true, `you've succesfully loggedin! yayyy`];
-  const failureMsg = [401, `invalid credentials`];
-  const session = await connection.startSession();
-
-  await session.withTransaction(transaction);
-  await session.endSession();
-  async function transaction() {
-    const result = await User.login(data);
-    console.log(result);
-    if (result) {
-      request.session.userID = result;
-      response.json(say(...successMsg));
-    } else scream(...failureMsg);
-  }
+  const user = await User.login(req.body);
+  req.session.userID = user._id;
+  res.json(say(...successMsg));
 }
 
-async function fetchMembers(request, response) {
-  const result = await User.find({}, { firstName: 1, lastName: 1 });
-  const successMsg = [true, null, result];
-  const failureMsg = [401, `couldn't fetch the members`];
-  result ? response.json(say(...successMsg)) : scream(...failureMsg);
+const fetchMembers = async (req, res) => {
+  const users = await User.fetchMembers();
+  const successMsg = [true, null, users];
+  res.json(say(...successMsg));
 }
 
-async function memberProfile(request, response) {
-  const { userID } = request.params;
-  const result = await User.findOne({ username: userID }, { password: false });
-  const successMsg = [true, null, result];
-  const failureMsg = [404, `such a user doesn't exists`];
-  !result && scream(...failureMsg);
-  response.json(say(...successMsg));
+const memberProfile = async (req, res) => {
+  const user = await User.findProfile(req.params);
+  const successMsg = [true, null, user];
+  res.json(say(...successMsg));
 }
+
+const logout = (req, res) => req.session.destroy() && res.send("logged out");
 
 async function updateProfile(request, response) {}
 
-function logout(request, response) {
-  request.session.destroy();
-  response.send("logged out");
-}
-
-async function uploadPic(request, response) {
-  if (!request.file) scream(401, "upload failed");
-  const { userID } = request.session;
-  const { path } = request.file;
+async function uploadPic(req, res) {
+  if (!req.file) scream(401, "upload failed");
+  const { userID } = req.session;
+  const { path } = req.file;
   const user = await User.findByIdAndUpdate(userID, {$set: {profilePic: path}})
-  user && response.json(say(true, "succesfully updated your profile picture"));
+  user && res.json(say(true, "succesfully updated your profile picture"));
 }
 
 export {
