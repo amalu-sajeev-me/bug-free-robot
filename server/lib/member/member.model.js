@@ -34,9 +34,23 @@ export default class UserSchemaExtension{
   static async fetchMembers() {
     // 
     const failureMsg = [403, "couldn't find any members"];
-    const result = await User.find({}, { username: true });
+    const result = await User.find({}).populate("reviews");
+
+    const users = result.map(user => {
+      const reviewsCount = user.reviews.length;
+      const ratingStars = user.reviews.map(user => user.stars);
+      // const ratingStars = user.reviews.reduce((p, a) => +p.stars + +a.stars);
+      console.log(ratingStars);
+      return ({
+        fullName: `${user.firstName} ${user.lastName}`,
+        reviewsCount,
+        ratingStars
+      })
+    })
+
+
     !result && scream(...failureMsg);
-    return result;
+    return users;
   }
 
   static async findProfile({userID: username}) {
@@ -45,5 +59,11 @@ export default class UserSchemaExtension{
     const user = await User.findOne({ username }, { password: false });
     !user && scream(...failureMsg);
     return user;
+  }
+
+  // VIRTUALS
+
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
   }
 }
