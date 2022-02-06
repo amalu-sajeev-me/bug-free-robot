@@ -9,14 +9,28 @@ const { connection } = mongoose;
 const memberSignup = async (req, res) => {
   const { body: data } = req;
   const successMsg = [true, `succesfully created your account`];
-  const user = new User(data);
-  const result = await user.registerAccount();
-  result && res.json(say(...successMsg));
+  const action = ["member", "member registration"];
+  const activity = Action.activity(...action);
+  const user = new User({ ...data, actions: activity });
+
+  const session = await connection.startSession();
+  await session.withTransaction(transaction);
+  await session.endSession();
+  async function transaction() {
+    const result = await user.registerAccount();
+    await activity.save();
+    result && res.json(say(...successMsg));
+  }
 }
 
 const memberSignin = async (req, res) => {
   const successMsg = [true, `you've succesfully loggedin! yayyy`];
+  const action = ["member", "logged in"];
+  const activity = Action.activity(...action);
   const user = await User.login(req.body);
+  user.actions.push(activity);
+  await user.save();
+  await activity.save();
   req.session.userID = user._id;
   res.json(say(...successMsg));
 }

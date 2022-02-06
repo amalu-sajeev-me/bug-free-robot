@@ -52,6 +52,12 @@ const userSchema = new Schema({
 
 userSchema.loadClass(UserSchemaExtension);
 
+userSchema.pre("findProfile", async () => {
+  console.log("this is before accesing profile", this);
+});
+
+
+
 const User = model("User", userSchema);
 
 export { User };
