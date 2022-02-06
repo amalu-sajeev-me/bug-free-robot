@@ -164,6 +164,80 @@
           }
         }
       }
+    },
+    "/api/reviews/{userID}": {
+      "get": {
+        "summary": "get all reviews",
+        "description": "get all reviews of a user profile",
+        "parameters": [
+          {
+            "in": "path",
+            "type": "string",
+            "name": "userID",
+            "required": true,
+            "default": "username"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/reviews/{id}": {
+      "patch": {
+        "summary": "update a review",
+        "description": "",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "type": "string",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "review",
+            "schema": {
+              "properties": {
+                "stars": {
+                  "type": "string",
+                  "default": 4
+                },
+                "feedback": {
+                  "type": "string",
+                  "default": "very good !"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/reviews/{id}/": {
+      "delete": {
+        "summary": "delete a review",
+        "description": "",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "review",
+            "type": "string",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
     }
   }
 }
