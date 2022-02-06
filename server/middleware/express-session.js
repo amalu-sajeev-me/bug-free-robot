@@ -18,6 +18,9 @@ const sessionOptions = {
   resave: false,
   saveUninitialized: true,
   store,
+  cookie: {
+    sameSite: "none",
+  },
 };
 
 const session_ = session(sessionOptions);
