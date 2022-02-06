@@ -19,7 +19,7 @@ const sessionOptions = {
   saveUninitialized: true,
   store,
   cookie: {
-    secure: true,
+    // secure: true,
     sameSite: "none",
   },
 };
