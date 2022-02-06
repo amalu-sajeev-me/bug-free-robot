@@ -1,8 +1,6 @@
-import httpTerminator from "http-terminator";
 import { Server } from "socket.io";
 
-
-
+import httpTerminator from "http-terminator";
 const { createHttpTerminator } = httpTerminator;
 
 // standalone function to start an HTTP server
@@ -16,8 +14,8 @@ async function startServer(requestHandler) {
 
   // create a server using http module
   const server = http.createServer(requestHandler);
+  
   const io = new Server(server);
-
   // close the server on a termination event
   const httpTerminator = createHttpTerminator({ server });
 
@@ -28,7 +26,7 @@ async function startServer(requestHandler) {
   server.listen(PORT, () => console.log(serverMessage));
 
   // return the server instance
-  return server;
+  return [server, io];
 }
 
 // allows to shutdown the process if necessary
