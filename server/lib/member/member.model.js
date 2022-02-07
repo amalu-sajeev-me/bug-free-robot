@@ -38,14 +38,17 @@ export default class UserSchemaExtension{
 
     const users = result.map(user => {
       const reviewsCount = user.reviews.length;
-      const ratingStars = user.reviews.map(user => user.stars);
+      const ratingStars = user.reviews.map((user) => user.stars);
+      const totalStars =
+        ratingStars.length > 0 ? ratingStars.reduce((a, b) => a + b) : 0;
+
       // const ratingStars = user.reviews.reduce((p, a) => +p.stars + +a.stars);
-      console.log(ratingStars);
-      return ({
+      // console.log(ratingStars);
+      return {
         fullName: `${user.firstName} ${user.lastName}`,
         reviewsCount,
-        ratingStars
-      })
+        ratingStars: totalStars / reviewsCount,
+      };
     })
 
 
