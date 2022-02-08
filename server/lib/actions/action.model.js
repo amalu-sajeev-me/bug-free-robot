@@ -9,4 +9,16 @@ export default class ActionExtension {
     });
     return action;
   }
+
+  static async createActivity(userID, name, description) {
+    const user = User.findById(userID);
+    const activity = new Action({
+      actionType: name,
+      timeStamp: new Date().toLocaleString(),
+      description,
+    });
+    await user.actions.push(activity);
+    await user.save();
+    await activity.save();
+  }
 }
